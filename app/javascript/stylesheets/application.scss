@@ -1,3 +1,14 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,300&family=Oswald:wght@300;400;500;600&display=swap');
+
+body {
+  font-family: 'Lato', sans-serif;
+  color: #161925;
+  background-color: #DED9E2;
+}
+
+h1, h2, h3, h4{
+  font-family: 'Oswald', sans-serif;
+}
