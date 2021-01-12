@@ -3,7 +3,7 @@ puts 'Cleaning database...'
 # Ingredient.destroy_all
 # Quantiy.destroy_all
 # Steps.destroy_all
-# Recipe.destroy_all
+Recipe.destroy_all
 User.destroy_all
 
 puts 'Creating users...'
