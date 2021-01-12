@@ -1,0 +1,2 @@
+class QuantitiesController < ApplicationController
+end
