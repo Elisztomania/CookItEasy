@@ -1,5 +1,5 @@
 const hiddenNav = () => {
-  let hideItem = document.getElementById("links");
+  const hideItem = document.getElementById("links");
 
   if (hideItem == null)
     return
