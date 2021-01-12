@@ -7,6 +7,8 @@
       <%= f.input_field :category, label: 'Catégorie', placeholder: "Dessert", collection: Recipe::CAT, class:"rounded-full w-full py-2 px-4 italic mb-4"  %>
       <%= f.input_field :prep_time, label: 'Temps de préparation', placeholder: "20 minutes", class:"rounded-full w-full py-2 px-4 italic mb-4"  %>
       <%= f.input_field :cooking_time, label: 'Temps de préparation', placeholder: "30 minutes", class:"rounded-full w-full py-2 px-4 italic mb-4"  %>
+
+      <%= f.button :submit, 'Publier ma recette', class:'rounded-full bg-new-black text-lila-deep px-4 py-2'  %>
     <% end %>
   </div>
 
