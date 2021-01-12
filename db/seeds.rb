@@ -8,7 +8,9 @@ User.destroy_all
 
 puts 'Creating users...'
   user_admin = User.create(username:"elisztomania",email:"admin@cookiteasy.xyz", password:"getschompignon")
-    user_admin.save!
   ella = User.create(username:"Ella",email:"e@ll.a", password:"ellaellaaa")
+
+puts 'Creating recipies...'
+  bretzel = Recipe.create!(title:'Palmiers à la cannelle', category:'Dessert', cooking_time: 20, prep_time: 10, note:'Une recette hyper simple et rapide à faire pour le gouter!', user: user_admin)
 
 puts 'Finished!'
