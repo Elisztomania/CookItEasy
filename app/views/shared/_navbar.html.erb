@@ -1,5 +1,30 @@
-<div class="bg-white mb-6">
-  <div class="max-w-7xl mx-auto px-4 py-2 sm:px-6 lg:px-8">
-    <h1 class="text-xl text-bold">CookItEasy</h1>
+<nav class="mb-6">
+  <div class="mx-auto px-4 py-2 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between ">
+      <h1 class="text-xl text-bold">CookItEasy</h1>
+
+
+  <!-- Trying dropdown menu -->
+      <div>
+        <button id="menu" type="button" class="bg-creme rounded-full mt-1 flex text-sm focus:outline-none" aria-haspopup="true">
+            <%= image_tag "naruto.png", class:"h-8 w-8"%>
+        </button>
+      </div>
+    </div>
   </div>
+
+<div class="origin-top-right absolute right-1 w-42 ">
+  <% if !user_signed_in? %>
+    <div id="links" class="bg-creme block hidden rounded-md shadow-sm py-1 ring-1 ring-black ring-opacity-5">
+      <%= link_to "Connexion", new_user_session_path, class: "block px-4 py-2 text-sm text-new-blakc hover:bg-gray-100" %>
+      <%= link_to "Se créer un compte", new_user_session_path, class: "block px-4 py-2 text-sm text-new-blakc hover:bg-gray-100" %>
+    </div>
+
+  <% else %>
+    <div id="links" class="block hidden">
+      <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "block px-4 py-2 text-sm text-new-blakc hover:bg-gray-100" %>
+    </div>
+  <% end %>
 </div>
+
+</nav>
