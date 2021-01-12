@@ -1,0 +1,13 @@
+<h2 class="text-center text-lg mb-4">Trouvez la recette parfaite !</h2>
+
+<% @recipies.each do |recipe| %>
+  <div class="bg-creme px-4 py-2 rounded-md shadow-lila-deep h-28 relative">
+    <h3 class="text-base"><%= recipe.title %></h3>
+    <p class="text-sm text-lila-deep"><%= recipe.category %></p>
+
+    <div class="flex items-center absolute inset-x-4 bottom-2">
+      <p class="mr-4 text-xs">👩‍🍳 <%= recipe.prep_time %> min</p>
+      <p class="text-xs">⏲ <%= recipe.cooking_time %> min</p>
+    </div>
+  </div>
+<% end %>
