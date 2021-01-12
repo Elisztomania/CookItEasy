@@ -7,8 +7,8 @@ puts 'Cleaning database...'
 User.destroy_all
 
 puts 'Creating users...'
-  user_admin = User.create(email:"admin@cookiteasy.xyz", password:"getschompignon")
+  user_admin = User.create(username:"elisztomania",email:"admin@cookiteasy.xyz", password:"getschompignon")
     user_admin.save!
-  ella = User.create(email:"e@ll.a", password:"ellaellaaa")
+  ella = User.create(username:"Ella",email:"e@ll.a", password:"ellaellaaa")
 
 puts 'Finished!'
