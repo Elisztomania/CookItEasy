@@ -22,8 +22,10 @@ require("channels")
 
 // Internal imports, e.g:
 import '../stylesheets/application.scss';
+import { clickOnMenu } from '../components/navbar'
 
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
+  clickOnMenu();
 });
