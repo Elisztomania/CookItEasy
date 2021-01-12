@@ -27,16 +27,4 @@
 
 
 <!-- MENU BAR -->
-<div class="bg-creme rounded-full h-16 mt-10 flex items-center justify-center">
-  <%= image_tag "search.png", class:"h-8 pr-6" %>
-  <%= image_tag "books.png", class:"h-8 pr-6" %>
-
-  <div class="bg-creme rounded-full h-20 w-20 -mt-4 flex items-center justify-center">
-    <%= link_to new_recipy_path do %>
-      <%= image_tag "plus.png", class:"h-14" %>
-    <% end %>
-  </div>
-
-  <%= image_tag "cookie.png", class:"h-8 pl-6 pr-6" %>
-  <%= image_tag "heart.png", class:"h-8" %>
-</div>
+<%= render 'shared/menubar' %>
