@@ -1,9 +1,9 @@
 <h2 class="text-center text-lg mb-4">📚 Trouvez la recette parfaite !</h2>
 
 <!-- Cards recipies -->
-<% @recipies.each do |recipe| %>
-  <%= link_to recipy_path(recipe) do %>
-  <div class="bg-creme px-2 py-2 rounded-md shadow-lila-deep h-28">
+<% @recipes.each do |recipe| %>
+  <%= link_to recipe do %>
+  <div class="bg-creme px-2 py-2 rounded-md shadow-lila-deep h-28 mb-4">
 
     <div class="flex">
       <div class="mr-4">

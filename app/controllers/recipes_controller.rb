@@ -1,9 +1,9 @@
-class RecipiesController < ApplicationController
+class RecipesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_recipe, only: [:show, :edit, :update]
 
   def index
-    @recipies = Recipe.all
+    @recipes = Recipe.all
   end
 
   def show
@@ -15,7 +15,7 @@ class RecipiesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params)
-    @recipe.creator = current_user
+    @recipe.user = current_user
     if @recipe.save
       redirect_to @recipe
     else
