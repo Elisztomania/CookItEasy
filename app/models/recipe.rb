@@ -6,7 +6,7 @@ class Recipe < ApplicationRecord
 
   CAT = ["EZPZ", "Classique", "Master chef", "Dessert"]
 
-  validates :title, presence: true, uniqueness: true
+  validates :title, presence: true
   validates :category, presence: true, inclusion: { in: CAT }
   validates :cooking_time, presence: true
   validates :prep_time, presence: true
