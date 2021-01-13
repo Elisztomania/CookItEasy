@@ -2,6 +2,17 @@
 
 <div class="bg-lila-deep p-2 rounded-md shadow-creme">
 
-  <%= render 'form', recipe: @recipe %>
+    <div class="mx-4 mt-4">
+      <%= simple_form_for @recipe do |f| %>
+        <%= f.input_field :title, label: 'Titre de la recette', placeholder: "Cookies flocon d'avoines", class:"rounded-full w-full py-2 px-4 italic mb-4"  %>
+        <%= f.input_field :category, label: 'Catégorie', placeholder: "Dessert", collection: Recipe::CAT, class:"rounded-full w-full py-2 px-4 italic mb-4"  %>
+        <%= f.input_field :prep_time, label: 'Temps de préparation', placeholder: "20 minutes", class:"rounded-full w-full py-2 px-4 italic mb-4"  %>
+        <%= f.input_field :cooking_time, label: 'Temps de préparation', placeholder: "30 minutes", class:"rounded-full w-full py-2 px-4 italic mb-4" %>
+        <%= f.input_field :note, label: 'Votre commentaire sur la recette', placeholder: "Votre commentaire sur la recette", class:"rounded-lg w-full py-2 px-4 italic mb-4 h-20"  %>
+
+        <%= f.button :submit, 'Suivant', class:'rounded-full bg-new-black text-lila-deep px-4 py-2'  %>
+      <% end %>
+    </div>
+
 
 </div>

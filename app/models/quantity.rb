@@ -2,7 +2,7 @@ class Quantity < ApplicationRecord
   belongs_to :ingredient
   belongs_to :recipe
 
-  MESURE = [" ", "Ml", "Cl", "Cc", "Cs", "Tasse", "Pincée(s)", "g"]
+  MESURE = [" ", "g", "Ml", "Cl", "L" "Cc", "Cs", "Tasse", "Pincée(s)", "Tranche(s)"]
 
   validates :q, presence: true
   validates :mesure, inclusion: { in: MESURE }

@@ -1,5 +1,5 @@
 class Ingredient < ApplicationRecord
-  belongs_to :quantity
+  has_many :quantity
 
   validates :name, presence: true
 end

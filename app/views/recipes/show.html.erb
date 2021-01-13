@@ -1,1 +1,8 @@
 <h2><%= @recipe.title %></h2>
+
+<ol>
+  <%  @recipe.quantities.each do |quantity| %>
+    <li> <%= quantity.q %> <%= quantity.mesure %> <%= quantity.ingredient.name %></li>
+  <% end %>
+</ol>
+
