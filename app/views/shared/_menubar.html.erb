@@ -1,6 +1,9 @@
 <div class="bg-creme rounded-full h-16 mt-10 flex items-center justify-center">
-  <%= image_tag "search.png", class:"h-8 pr-6" %>
-  <%= image_tag "books.png", class:"h-8 pr-6" %>
+    <%= image_tag "search.png", class:"h-8 pr-6" %>
+
+  <%= link_to recipes_path do %>
+    <%= image_tag "books.png", class:"h-8 pr-6" %>
+  <% end %>
 
   <div class="bg-creme rounded-full h-20 w-20 -mt-4 flex items-center justify-center">
     <%= link_to new_recipe_path do %>
@@ -8,6 +11,9 @@
     <% end %>
   </div>
 
-  <%= image_tag "cookie.png", class:"h-8 pl-6 pr-6" %>
-  <%= image_tag "heart.png", class:"h-8" %>
+  <%= link_to my_recipes_path do %>
+    <%= image_tag "cookie.png", class:"h-8 pl-6 pr-6" %>
+  <% end %>
+
+    <%= image_tag "heart.png", class:"h-8" %>
 </div>
