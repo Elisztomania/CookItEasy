@@ -36,6 +36,10 @@ class RecipesController < ApplicationController
     end
   end
 
+  def show_my
+    @myrecipes = Recipe.where(user: current_user)
+  end
+
   private
 
   def set_recipe
