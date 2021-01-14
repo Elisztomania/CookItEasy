@@ -2,7 +2,7 @@
 
   <div class="bg-lila-deep p-2 rounded-md shadow-creme">
     <div class="mx-4 my-4">
-      <%= simple_form_for [@recipe, @quantity] do |f| %>
+      <%= simple_form_for [@recipe, @quantity], remote: true do |f| %>
             <div class="">
               <%= f.input_field :q, placeholder: "Quantité", class: 'rounded-full w-36 py-2 px-4 italic mb-4' %>
               <%= f.input_field :mesure, collection: Quantity::MESURE, prompt: "Mesure", class: 'rounded-full w-36 py-2 px-4 italic mb-4' %>
