@@ -11,8 +11,8 @@ class QuantitiesController < ApplicationController
     @ingredient = Ingredient.new(name: params[:quantity][:ingredient])
     @quantity.recipe = @recipe
     @quantity.ingredient = @ingredient
-    if @quantity.save!
-      redirect_to @recipe
+    if @quantity.save
+      redirect_to new_recipe_quantity_path(@recipe)
     else
       render :new
     end

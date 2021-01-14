@@ -7,7 +7,15 @@
               <%= f.input_field :mesure, collection: Quantity::MESURE, label: "Mesure", class: 'rounded-full w-full py-2 px-4 italic mb-4' %>
               <%= f.input_field :ingredient, label: "Ingredient", placeholder: "Tomate", class: 'rounded-full w-full py-2 px-4 italic mb-4' %>
 
-              <%= f.button :submit, 'Suivant', class:'rounded-full bg-new-black text-lila-deep px-4 py-2'  %>
+              <%= button_tag type:'submit', class:'rounded-full bg-new-black text-lila-deep px-4 py-2' do %>
+                <i class="fas fa-plus-circle"></i>
+              <% end %>
       <% end %>
+
+      <div class="mt-10">
+        <%= link_to 'Étape suivante',  new_recipe_step_path(@recipe), class:'rounded-full bg-new-black text-lila-deep text-sm px-4 py-2' %>
+      </div>
     </div>
+
+
   </div>
