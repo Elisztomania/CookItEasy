@@ -12,3 +12,14 @@ body {
 h1, h2, h3, h4{
   font-family: 'Oswald', sans-serif;
 }
+
+.alert {
+  position: fixed;
+  bottom: 8px;
+  right: 8px;
+  z-index: 1000;
+  background-color: #F7F4EA;
+  padding: 4px;
+  font-size: 10px;
+  border-radius: 2px;
+}
