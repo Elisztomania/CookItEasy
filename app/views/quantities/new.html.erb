@@ -15,7 +15,24 @@
 
       <% end %>
 
-      <div class="mt-10">
+      <!-- Affiche les ingédients ajoutés -->
+
+    <h3 class="text-base mt-4 mb-2">Les ingrédients ajoutés</h3>
+
+      <%  @recipe.quantities.each do |quantity| %>
+      <ul>
+        <% if quantity.mesure == "Pâte(s)" %>
+          <li> <%= quantity.q %> <%= quantity.mesure.downcase%> <%= quantity.ingredient.name.downcase %></li>
+        <% elsif quantity.mesure == "(rien)" %>
+          <li> <%= quantity.q %> <%= quantity.ingredient.name.downcase %></li>
+        <% else %>
+          <li> <%= quantity.q %> <%= quantity.mesure.downcase  %> de <%= quantity.ingredient.name.downcase %></li>
+        <% end %>
+      </ul>
+      <% end %>
+
+      <!-- Fin -->
+      <div class="mt-10 text-right">
         <%= link_to 'Étape suivante',  new_recipe_step_path(@recipe), class:'rounded-full bg-new-black text-lila-deep text-sm px-4 py-2' %>
       </div>
     </div>
