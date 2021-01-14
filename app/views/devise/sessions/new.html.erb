@@ -2,29 +2,29 @@
   <h2 class="text-lg text-center mb-5">Indentification</h2>
 
   <div class="bg-lila-deep p-2 rounded-md shadow-creme">
-    <h3>Se connecter</h3>
+    <h3 class="text-center mb-2 mt-4">Se connecter</h3>
 
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="form-inputs">
-        <%= f.input :email,
-                    required: false,
-                    autofocus: true,
-                    input_html: { autocomplete: "email" } %>
-        <%= f.input :password,
-                    required: false,
-                    input_html: { autocomplete: "current-password" } %>
-        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-      </div>
+      <div class="mx-4 mt-4">
+          <div class="mb-1"><%= f.label :email, required: true %></div>
+          <%= f.input_field :email, required: true, autofocus: true, class:"rounded-full w-full py-1 px-4 mb-4"%>
 
-      <div class="form-actions">
-        <%= f.button :submit, "Se connecter" %>
+
+        <%= f.input :password,
+                    required: true, autofocus: true,
+                    label: "Mot de passe " %>
+        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+
+        <div class="text-center mt-5">
+          <%= f.button :submit, "Se connecter", class:"rounded-full bg-new-black text-lila-deep px-4 py-2" %>
+        </div>
       </div>
     <% end %>
 
 
 
 
-    <h2 class="mt-5">Se créer un compte</h2>
+    <h3 class="text-center mb-2 mt-5">Se créer un compte</h3>
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
