@@ -5,8 +5,8 @@
     <div class="bg-creme px-2 py-2 rounded-md shadow-lila-deep h-28 mb-4">
 
       <div class="flex">
-        <div class="mr-4">
-          <%= image_tag "palmiers.jpg", class:"h-24 w-28 rounded-md" %>
+        <div class="mr-4 h-24 w-28 rounded-md">
+          <%= cl_image_tag recipe.photo.key, crop: :fill %>
         </div>
 
         <div>

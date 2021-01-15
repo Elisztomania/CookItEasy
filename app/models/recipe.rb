@@ -3,6 +3,7 @@ class Recipe < ApplicationRecord
   has_many :quantities
   has_many :ingredients, through: :quantity
   has_many :steps
+  has_one_attached :photo
 
   CAT = ["EZPZ", "Classique", "Master chef", "Dessert"]
 
