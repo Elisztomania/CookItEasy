@@ -3,7 +3,7 @@ puts 'Cleaning database...'
 Quantity.destroy_all
 Ingredient.destroy_all
 
-Steps.destroy_all
+Step.destroy_all
 Recipe.destroy_all
 User.destroy_all
 
@@ -17,7 +17,7 @@ puts 'Creating recipies...'
     palmiers.photo.attach(io: source, filename: 'palmiers.jpg', content_type: 'image/jpg')
     palmiers.save!
     ing1 = Ingredient.create(name: "pâte feuilletée")
-    q1 = Quantity.create(q: 1, mesure:" ", recipe: palmiers, ingredient:ing1)
+    q1 = Quantity.create(q: 1, mesure:"(rien)", recipe: palmiers, ingredient:ing1)
 
     ing2 = Ingredient.create(name: "sucre roux")
     q2 = Quantity.create(q: 30, mesure: "g", recipe: palmiers, ingredient: ing2)
