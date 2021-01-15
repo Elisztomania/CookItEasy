@@ -1,8 +1,24 @@
 <h2><%= @recipe.title %></h2>
 
-<ol>
-  <%  @recipe.quantities.each do |quantity| %>
-    <li> <%= quantity.q %> <%= quantity.mesure %> <%= quantity.ingredient.name.downcase %></li>
-  <% end %>
-</ol>
+<h3>Les ingrédients</h3>
+
+  <ul>
+    <%  @recipe.quantities.each do |quantity| %>
+      <% if quantity.mesure == "Pâte(s)" %>
+          <li> <%= quantity.q %> <%= quantity.mesure.downcase%> <%= quantity.ingredient.name.downcase %></li>
+      <% elsif quantity.mesure == "(rien)" %>
+          <li> <%= quantity.q %> <%= quantity.ingredient.name.downcase %></li>
+      <% else %>
+          <li> <%= quantity.q %> <%= quantity.mesure.downcase  %> de <%= quantity.ingredient.name.downcase %></li>
+      <% end %>
+    <% end %>
+  </ul>
+
+<h3>La préparation</h3>
+  <ol>
+    <%  @recipe.steps.each do |step| %>
+      <li> <%= step.description %></li>
+    <% end %>
+  </ol>
+
 
