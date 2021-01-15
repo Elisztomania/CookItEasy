@@ -1,0 +1,39 @@
+<h2 class="text-center text-lg mb-5">👩‍🍳 Plus qu'à ajouter les étapes de préparation !</h2>
+
+  <div class="bg-lila-deep p-2 rounded-md shadow-creme">
+    <div class="mx-4 my-4">
+      <%= simple_form_for [@recipe, @step], remote: true do |f| %>
+            <div class="">
+              <div class="mb-2"><%= f.label :description, "Ajoutez une étape de préparation" %></div>
+              <%= f.input_field :description, as: :text, placeholder: "Décrivez chaque étape de la recette...", class: 'rounded-md w-full px-4 py-4 italic' %>
+
+              <div class="text-right">
+                <%= button_tag type:'submit', class:'rounded-full bg-new-black text-lila-deep px-4 py-2' do %>
+                  <i class="fas fa-plus-circle"></i>
+                <% end %>
+              </div>
+            </div>
+
+      <% end %>
+
+      <!-- Affiche les étapes ajoutés -->
+
+    <h3 class="text-base mt-4 mb-2">Les étapes ajoutées</h3>
+
+    <% i = 0 %>
+
+      <%  @recipe.steps.each do |step| %>
+      <% i += 1 %>
+      <p> <b><%= i %>.</b> <%= step.description %> </p>
+      <% end %>
+
+      <!-- Fin -->
+
+      <div class="mt-10 text-center">
+        <%= link_to 'Publier la recette',  recipe_path(@recipe), class:'rounded-full bg-new-black text-lila-deep text-sm px-4 py-2' %>
+      </div>
+    </div>
+
+
+  </div>
+

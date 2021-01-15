@@ -27,8 +27,4 @@ class QuantitiesController < ApplicationController
   def quantity_params
     params.require(:quantity).permit(:q, :mesure, :ingredient_id, :recipe_id)
   end
-
-  def ingredient_params
-    params.require(:ingredient).permit(:name)
-  end
 end
