@@ -1,4 +1,4 @@
-<h2 class="text-center text-lg mb-4">🍪 Mes recettes publiées !</h2>
+<h2 class="text-center text-lg mb-4">🍪  Mes recettes publiées !</h2>
 
   <% @myrecipes.each do |recipe| %>
     <%= link_to recipe do %>
@@ -6,7 +6,17 @@
 
       <div class="flex">
         <div class="mr-4">
-          <%= image_tag "palmiers.jpg", class:"h-24 w-28 rounded-md" %>
+          <% if recipe.photo.attached? %>
+            <%= cl_image_tag recipe.photo.key, height: 96, width: 112, crop: :fill, gravity: :auto, class:"rounded-md" %>
+          <% elsif recipe.category == "EZPZ" %>
+            <%= image_tag "ezpz.jpg", height: 96, width: 112, crop: :fill, gravity: :auto, class:"rounded-md h-24 w-28" %>
+          <% elsif recipe.category == "Classique" %>
+            <%= image_tag "classique.jpg", height: 96, width: 112, crop: :fill, gravity: :auto, class:"rounded-md h-24 w-28" %>
+          <% elsif recipe.category == "Master chef" %>
+            <%= image_tag "master-chef.jpg", height: 96, width: 112, crop: :fill, gravity: :auto, class:"rounded-md h-24 w-28" %>
+          <% else %>
+            <%= image_tag "dessert.jpg", height: 96, width: 112, crop: :fill, gravity: :auto, class:"rounded-md h-24 w-28" %>
+          <% end %>
         </div>
 
         <div>
@@ -22,3 +32,7 @@
     </div>
     <% end %>
   <% end %>
+
+
+<!-- MENU BAR -->
+<%= render 'shared/menubar' %>
