@@ -56,7 +56,7 @@ puts 'Creating recipies...'
     Quantity.create(q: 2, mesure:"C à soupe", recipe: tarte_p, ingredient:ing4_tp)
 
     Step.create(description: "Coupez les pommes en fines tranches.", recipe: tarte_p)
-    Step.create(description: "Disposez la pâte dans un moule à trate. Piquez là avec une fourchette.", recipe: tarte_p)
+    Step.create(description: "Disposez la pâte dans un moule à tarte. Piquez là avec une fourchette.", recipe: tarte_p)
     Step.create(description: "Étalez la compote. Soupoudrez de cannelle, disposez les tranches de pommes en rosace puis rajoutez le sucre.", recipe: tarte_p)
     Step.create(description: "Faites cuire 45 minutes environ dans un four préalablement préchauffé à 200°C.", recipe: tarte_p)
 
@@ -78,4 +78,66 @@ puts 'Creating recipies...'
     ing4_tc = Ingredient.create(name: "moutarde")
     Quantity.create(q: 2, mesure:"C à soupe", recipe: tarte_c, ingredient:ing4_tc)
 
+    Step.create(description: "Coupez les courgettes en fines tranches.", recipe: tarte_c)
+    Step.create(description: "Disposez la pâte dans un moule à tarte. Piquez là avec une fourchette.", recipe: tarte_c)
+    Step.create(description: "Étalez la mourtde puis le fromage frais. Disposez les rondelles de courgette. Salez et poivrez.", recipe: tarte_c)
+    Step.create(description: "Faites cuire 45 minutes environ dans un four préalablement préchauffé à 200°C.", recipe: tarte_c)
+
+    puts "Creating Chili Sin Carne..."
+      chili = Recipe.create(title:'Chili sin carne', category:'EZPZ', cooking_time: 20, prep_time: 20, note: "Un chili végératien simple, ultra rapide, pas chers et réconfortant!", user: user_admin)
+      source = File.open("app/assets/images/chili.jpg")
+      chili.photo.attach(io: source, filename: 'chili.jpg', content_type: 'image/jpg')
+      chili.save!
+
+      ing1_chili = Ingredient.create(name: "pois chiche")
+      Quantity.create(q: 1, mesure:"Conserve(s)", recipe: chili, ingredient:ing1_chili)
+
+      ing2_chili = Ingredient.create(name: "haricots rouges façon chili de Bonduelle")
+      Quantity.create(q: 1, mesure:"Conserve(s)", recipe: chili, ingredient:ing2_chili)
+
+      ing3_chili = Ingredient.create(name: "sauce tomate")
+      Quantity.create(q: 1, mesure:"Brique(s)", recipe: chili, ingredient:ing3_chili)
+
+      ing4_chili = Ingredient.create(name: "mélange d'épices méxicaines")
+      Quantity.create(q: 1, mesure:"(rien)", recipe: chili, ingredient:ing4_chili)
+
+      ing5_chili = Ingredient.create(name: "riz")
+      Quantity.create(q: 150, mesure:"g", recipe: chili, ingredient:ing5_chili)
+
+      ing6_chili = Ingredient.create(name: "fromage rapé (pour encore plus de plaisir)")
+      Quantity.create(q: 2, mesure:"Pincée(s)", recipe: chili, ingredient:ing6_chili)
+
+
+      Step.create(description: "Faites cuire le riz.", recipe: chili)
+      Step.create(description: "Réutilisez la casserole du riz pour faire la sauce : faites revenir les haricots puis les pois chiche avec les épices.", recipe: chili)
+      Step.create(description: "Rajoutez la sauce tomate puis assaisonnez à votre convenance (sel, poivre, encore des épices...)", recipe: chili)
+      Step.create(description: "Mélangez le riz avec votre super sauce! Ajoutez le fromage et dégustez!", recipe: chili)
+
 puts 'Finished!'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
