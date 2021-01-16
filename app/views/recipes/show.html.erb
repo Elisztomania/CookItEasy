@@ -1,24 +1,45 @@
-<h2><%= @recipe.title %></h2>
+<% if @recipe.photo.attached? %>
+    <%= cl_image_tag @recipe.photo.key, height: 192, crop: :fill, gravity: :auto, class:"rounded-md w-full" %>
+  <% elsif @recipe.category == "EZPZ" %>
+    <%= image_tag "ezpz.jpg", height: 96, width: 112, crop: :fill, gravity: :auto, class:"rounded-md h-24 w-28" %>
+  <% elsif @recipe.category == "Classique" %>
+    <%= image_tag "classique.jpg", height: 96, width: 112, crop: :fill, gravity: :auto, class:"rounded-md h-24 w-28" %>
+  <% elsif @recipe.category == "Master chef" %>
+    <%= image_tag "master-chef.jpg", height: 96, width: 112, crop: :fill, gravity: :auto, class:"rounded-md h-24 w-28" %>
+  <% else %>
+    <%= image_tag "dessert.jpg", height: 96, width: 112, crop: :fill, gravity: :auto, class:"rounded-md h-24 w-28" %>
+<% end %>
 
-<h3>Les ingrédients</h3>
 
-  <ul>
+<div class="mx-4 my-4">
+  <h2 class="text-lg text-center mb-10"><%= @recipe.title %></h2>
+
+<div class="mb-5">
+  <h3 class="text-base mb-2">Les ingrédients</h3>
+
+  <ul class="list-inside list-disc">
     <%  @recipe.quantities.each do |quantity| %>
+
       <% if quantity.mesure == "Pâte(s)" %>
-          <li> <%= quantity.q %> <%= quantity.mesure.downcase%> <%= quantity.ingredient.name.downcase %></li>
+          <li class="mb-1"> <%= quantity.q %> <%= quantity.mesure.downcase%> <%= quantity.ingredient.name.downcase %></li>
       <% elsif quantity.mesure == "(rien)" %>
-          <li> <%= quantity.q %> <%= quantity.ingredient.name.downcase %></li>
+          <li class="mb-1"> <%= quantity.q %> <%= quantity.ingredient.name.downcase %></li>
       <% else %>
-          <li> <%= quantity.q %> <%= quantity.mesure.downcase  %> de <%= quantity.ingredient.name.downcase %></li>
+          <li class="mb-1"> <%= quantity.q %> <%= quantity.mesure.downcase  %> de <%= quantity.ingredient.name.downcase %></li>
       <% end %>
+
     <% end %>
   </ul>
-
-<h3>La préparation</h3>
-  <ol>
-    <%  @recipe.steps.each do |step| %>
-      <li> <%= step.description %></li>
-    <% end %>
-  </ol>
+</div>
 
 
+ <div>
+    <h3 class="text-base mb-2">La préparation</h3>
+
+      <ol class="list-inside list-decimal">
+        <%  @recipe.steps.each do |step| %>
+          <li class="mb-1"> <%= step.description %> </li>
+        <% end %>
+      </ol>
+  </div>
+</div>
