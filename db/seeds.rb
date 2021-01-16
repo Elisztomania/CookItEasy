@@ -40,7 +40,7 @@ puts 'Creating recipies...'
     tarte_p.photo.attach(io: source, filename: 'tarte-pomme.jpg', content_type: 'image/jpg')
     tarte_p.save!
 
-    ing1_tp = Ingredient.create(name: "pâte feuilletée")
+    ing1_tp = Ingredient.create(name: "pâte brisée")
     Quantity.create(q: 1, mesure:"(rien)", recipe: tarte_p, ingredient:ing1_tp)
 
     ing2_tp = Ingredient.create(name: "compotes de pommes")
@@ -59,5 +59,23 @@ puts 'Creating recipies...'
     Step.create(description: "Disposez la pâte dans un moule à trate. Piquez là avec une fourchette.", recipe: tarte_p)
     Step.create(description: "Étalez la compote. Soupoudrez de cannelle, disposez les tranches de pommes en rosace puis rajoutez le sucre.", recipe: tarte_p)
     Step.create(description: "Faites cuire 45 minutes environ dans un four préalablement préchauffé à 200°C.", recipe: tarte_p)
+
+  puts "Creating Tarte fromage frais et courgettes..."
+    tarte_c = Recipe.create(title:'Tarte courgettes et fromage frais', category:'EZPZ', cooking_time: 45, prep_time: 20, note: "Une tarte légère et rapide à faire! Idéale pour l'été.", user: user_admin)
+    source = File.open("app/assets/images/tarte-courgettes.jpg")
+    tarte_c.photo.attach(io: source, filename: 'tarte-courgettes.jpg', content_type: 'image/jpg')
+    tarte_c.save!
+
+    ing1_tc = Ingredient.create(name: "pâte brisée")
+    Quantity.create(q: 1, mesure:"(rien)", recipe: tarte_c, ingredient:ing1_tc)
+
+    ing3_tc = Ingredient.create(name: "courgettes")
+    Quantity.create(q: 3, mesure:"(rien)", recipe: tarte_c, ingredient:ing3_tc)
+
+    ing2_tc = Ingredient.create(name: "fromage frais type St-Moret")
+    Quantity.create(q: 5, mesure:"C à soupe", recipe: tarte_c, ingredient:ing2_tc)
+
+    ing4_tc = Ingredient.create(name: "moutarde")
+    Quantity.create(q: 2, mesure:"C à soupe", recipe: tarte_c, ingredient:ing4_tc)
 
 puts 'Finished!'
