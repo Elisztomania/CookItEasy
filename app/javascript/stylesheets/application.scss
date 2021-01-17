@@ -3,16 +3,34 @@
 @import "tailwindcss/utilities";
 
 
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,300&family=Oswald:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,600;0,700;0,800;1,300;1,900&display=swap');
 
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Libre Franklin', sans-serif;
   color: #161925;
   background-color: #DED9E2;
 }
 
-h1, h2, h3, h4{
-  font-family: 'Oswald', sans-serif;
+h1 {
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  color: #161925;
+}
+
+h2 {
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 700;
+  font-style: bold;
+  color: #161925;
+}
+
+h3, h4 {
+  /* font-family: 'Oswald', sans-serif; */
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 600;
+  font-style: semi-bold;
+  color: #161925;
 }
 
 .alert {

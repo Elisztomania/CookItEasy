@@ -61,7 +61,7 @@ puts 'Creating recipies...'
     Step.create(description: "Faites cuire 45 minutes environ dans un four préalablement préchauffé à 200°C.", recipe: tarte_p)
 
   puts "Creating Tarte fromage frais et courgettes..."
-    tarte_c = Recipe.create(title:'Tarte courgettes et fromage frais', category:'EZPZ', cooking_time: 45, prep_time: 20, note: "Une tarte légère et rapide à faire! Idéale pour l'été.", user: user_admin)
+    tarte_c = Recipe.create(title:'Tarte courgettes et StMoret', category:'EZPZ', cooking_time: 45, prep_time: 20, note: "Une tarte légère et rapide à faire! Idéale pour l'été.", user: user_admin)
     source = File.open("app/assets/images/tarte-courgettes.jpg")
     tarte_c.photo.attach(io: source, filename: 'tarte-courgettes.jpg', content_type: 'image/jpg')
     tarte_c.save!
