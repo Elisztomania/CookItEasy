@@ -3,6 +3,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      fontSize: {
+        'xxs': '.65rem',
+      },
       boxShadow: {
         'creme': '4px 4px 0 0 rgba(247, 244, 234, 1)',
         'lila-deep': '4px 4px 0 0 rgba(192, 185, 221, 1)',
