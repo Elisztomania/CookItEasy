@@ -1,47 +1,21 @@
-<div class="mx-auto">
-  <h2 class="text-lg text-center mb-5">👋 Identification</h2>
+<div class="bg-lila-deep py-6 px-6 rounded-md shadow-creme mt-14">
+  <h2 class="text-lg text-center mb-5">👋 Se connecter</h2>
 
-  <div class="bg-lila-deep p-2 rounded-md shadow-creme">
-    <div class="mx-4 my-4 pb-8 border-b border-new-black">
-      <h3 class="mb-4 mt-4">Se connecter</h3>
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+              <!-- <div class="mb-1"><%= f.label :email, "Email" %></div> -->
+              <%= f.input_field :email, placeholder:"Email", required: true, autofocus: true, class:"text-sm rounded-full w-full italic py-1 px-4 mb-4"%>
 
-            <!-- <div class="mb-1"><%= f.label :email, "Email" %></div> -->
-            <%= f.input_field :email, placeholder:"Email", required: true, autofocus: true, class:"rounded-full w-full italic py-1 px-4 mb-4"%>
+              <!-- <div class="mb-1"><%= f.label :password, "Mot de passe" %></div> -->
+              <%= f.input_field :password, placeholder:"Mot de passe", required: true, autofocus: true, class:"text-sm rounded-full w-full italic py-1 px-4 mb-4" %>
 
-            <!-- <div class="mb-1"><%= f.label :password, "Mot de passe" %></div> -->
-            <%= f.input_field :password, placeholder:"Mot de passe", required: true, autofocus: true, class:"rounded-full w-full italic py-1 px-4 mb-4" %>
+              <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
 
-            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+            <div class="text-center mt-5">
+              <%= f.button :submit, "Se connecter", class:"text-sm rounded-full bg-new-black text-lila-deep px-4 py-2" %>
+            </div>
+        <% end %>
 
-          <div class="text-center mt-5">
-            <%= f.button :submit, "Se connecter", class:"rounded-full bg-new-black text-lila-deep px-4 py-2" %>
-          </div>
-      <% end %>
-    </div>
-
-
-
-    <div class="mx-4 mt-8 mb-4">
-      <h3 class="mb-4 mt-5">Se créer un compte</h3>
-
-      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= f.error_notification %>
-
-
-          <%= f.input_field :username, placeholder:"Username", required: true, autofocus: true, class:"rounded-full w-full italic py-1 px-4 mb-4" %>
-
-          <%= f.input_field :email, placeholder:"Email", required: true, autofocus: true, class:"rounded-full w-full italic py-1 px-4 mb-4" %>
-          <%= f.input_field :password, placeholder:"Mot de passe", required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), class:"rounded-full w-full italic py-1 px-4 mb-4" %>
-
-          <%= f.input_field :password_confirmation, placeholder:"Confirmation du mot de passe", required: true, class:"rounded-full w-full italic py-1 px-4" %>
-
-        <div class="text-center mt-5">
-          <%= f.button :submit, "Créer un compte", class:"rounded-full bg-new-black text-lila-deep px-4 py-2" %>
-        </div>
-      <% end %>
-    </div>
-
-  </div>
 </div>
+
+ <%= image_tag "cooks.png", class:"mt-16"%>

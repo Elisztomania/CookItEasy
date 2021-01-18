@@ -1,25 +1,28 @@
-<!-- <h2>Se créer un compte</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
-  </div>
+<div class="bg-lila-deep py-6 px-6 rounded-md shadow-creme mt-14">
 
-  <div class="form-actions">
-    <%= f.button :submit, "Créer un compte" %>
-  </div>
-<% end %>
+  <h2 class="text-lg text-center mb-5 ">🔥  Se créer un compte</h2>
 
-<%= render "devise/shared/links" %> -->
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= f.error_notification %>
+
+
+              <%= f.input_field :username, placeholder:"Username", required: true, autofocus: true, class:"text-sm rounded-full w-full italic py-1 px-4 mb-6" %>
+
+              <%= f.input_field :email, placeholder:"Email", required: true, autofocus: true, class:"text-sm rounded-full w-full italic py-1 px-4 mb-6" %>
+              <%= f.input_field :password, placeholder:"Mot de passe", required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), class:"text-sm rounded-full w-full italic py-1 px-4 mb-6" %>
+
+              <%= f.input_field :password_confirmation, placeholder:"Confirmation du mot de passe", required: true, class:"text-sm rounded-full w-full italic py-1 px-4" %>
+
+            <div class="text-center mt-6">
+              <%= f.button :submit, "Créer un compte", class:"text-sm rounded-full bg-new-black text-lila-deep px-4 py-2 mb-2" %>
+            </div>
+          <% end %>
+</div>
+
+
+ <%= image_tag "cooks.png", class:"mt-5"%>
+
+
+<!-- <%= render "devise/shared/links" %> -->
