@@ -2,31 +2,33 @@
 <% @recipes.each do |recipe| %>
   <%= link_to recipe do %>
   <div class="bg-creme px-2 py-2 rounded-md shadow-lila-deep h-28 mb-4">
-
     <div class="flex">
-      <div class="mr-4">
+      <div class="mr-4 h-28 w-28">
         <% if recipe.photo.attached? %>
-          <%= cl_image_tag recipe.photo.key, height: 96, width: 112, crop: :fill, gravity: :auto, class:"rounded-md" %>
+          <%= cl_image_tag recipe.photo.key, height: 192, width: 224, crop: :fill, gravity: :auto, class:"rounded-md" %>
         <% elsif recipe.category == "EZPZ" %>
-          <%= image_tag "ezpz.jpg", height: 96, width: 112, crop: :fill, gravity: :auto, class:"rounded-md h-24 w-28" %>
+          <%= image_tag "ezpz.jpg", height: 192, width: 224, crop: :fill, gravity: :auto, class:"rounded-md h-24 w-28" %>
         <% elsif recipe.category == "Classique" %>
-          <%= image_tag "classique.jpg", height: 96, width: 112, crop: :fill, gravity: :auto, class:"rounded-md h-24 w-28" %>
+          <%= image_tag "classique.jpg", height: 192, width: 224, crop: :fill, gravity: :auto, class:"rounded-md h-24 w-28" %>
         <% elsif recipe.category == "Master chef" %>
-          <%= image_tag "master-chef.jpg", height: 96, width: 112, crop: :fill, gravity: :auto, class:"rounded-md h-24 w-28" %>
+          <%= image_tag "master-chef.jpg", height: 192, width: 224, crop: :fill, gravity: :auto, class:"rounded-md h-24 w-28" %>
         <% else %>
-          <%= image_tag "dessert.jpg", height: 96, width: 112, crop: :fill, gravity: :auto, class:"rounded-md h-24 w-28" %>
+          <%= image_tag "dessert.jpg", height: 192, width: 224, crop: :fill, gravity: :auto, class:"rounded-md h-24 w-28" %>
         <% end %>
       </div>
 
-      <div class="">
+      <div class="relative h-24 w-48">
         <h3 class="text-sm"><%= recipe.title %></h3>
         <p class="text-xs text-lila-deep font-medium"><%= recipe.category %></p>
 
-        <div class="flex items-center mt-6">
-          <p class="mr-4 text-xxs">👩‍🍳 <%= recipe.prep_time %> min</p>
-          <p class="text-xxs">⏲ <%= recipe.cooking_time %> min</p>
+        <div class="absolute inset-x-0 bottom-0">
+          <div class="flex items-center">
+            <p class="mr-4 text-xxs">👩‍🍳 <%= recipe.prep_time %> min</p>
+            <p class="text-xxs">⏲ <%= recipe.cooking_time %> min</p>
+          </div>
         </div>
       </div>
+
     </div>
   </div>
   <% end %>

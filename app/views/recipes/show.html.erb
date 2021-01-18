@@ -1,13 +1,13 @@
 <% if @recipe.photo.attached? %>
-    <%= cl_image_tag @recipe.photo.key, height: 192, crop: :fill, gravity: :auto, class:"rounded-md w-full" %>
+    <%= cl_image_tag @recipe.photo.key, height: 288, crop: :fill, gravity: :auto, class:"rounded-md w-full" %>
   <% elsif @recipe.category == "EZPZ" %>
-    <%= image_tag "ezpz.jpg", height: 96, width: 112, crop: :fill, gravity: :auto, class:"rounded-md h-24 w-28" %>
+    <%= image_tag "ezpz.jpg", height: 288, width: 336, crop: :fill, gravity: :auto, class:"rounded-md h-24 w-full" %>
   <% elsif @recipe.category == "Classique" %>
-    <%= image_tag "classique.jpg", height: 96, width: 112, crop: :fill, gravity: :auto, class:"rounded-md h-24 w-28" %>
+    <%= image_tag "classique.jpg", height: 288, width: 336, crop: :fill, gravity: :auto, class:"rounded-md h-24 w-28" %>
   <% elsif @recipe.category == "Master chef" %>
-    <%= image_tag "master-chef.jpg", height: 96, width: 112, crop: :fill, gravity: :auto, class:"rounded-md h-24 w-28" %>
+    <%= image_tag "master-chef.jpg", height: 288, width: 336, crop: :fill, gravity: :auto, class:"rounded-md h-24 w-28" %>
   <% else %>
-    <%= image_tag "dessert.jpg", height: 96, width: 112, crop: :fill, gravity: :auto, class:"rounded-md h-24 w-28" %>
+    <%= image_tag "dessert.jpg", height: 288, width: 336, crop: :fill, gravity: :auto, class:"rounded-md h-72 w-full" %>
 <% end %>
 
 
