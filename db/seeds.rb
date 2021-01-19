@@ -144,7 +144,65 @@ puts 'Creating recipies...'
       Step.create(description: "Enfournez pour 45 minutes de cuisson (voir plus selon votre four).", recipe: quiche)
 
     puts "Creating Gratin butternut..."
+      gratin_b = Recipe.create(title:'gratin_b poireaux feta', category:'Classique', cooking_time: 30, prep_time: 20, note: "Une recette qui change un peu mais c'est vraiment pas mal, je recommande.", user: user_admin)
+      source = File.open("app/assets/images/butternut.jpg")
+      gratin_b.photo.attach(io: source, filename: 'butternut.jpg', content_type: 'image/jpg')
+      gratin_b.save!
+
+      ing1_gratinb = Ingredient.create(name: "butternut")
+      Quantity.create(q: 1, mesure:"(rien)", recipe: gratin_b, ingredient:ing1_gratinb)
+
+      ing2_gratinb = Ingredient.create(name: "champignons")
+      Quantity.create(q: 400, mesure:"g", recipe: gratin_b, ingredient:ing2_gratinb)
+
+      ing3_gratinb = Ingredient.create(name: "œufs")
+      Quantity.create(q: 3, mesure:"(rien)", recipe: gratin_b, ingredient:ing3_gratinb)
+
+      ing4_gratinb = Ingredient.create(name: "dés de jambon cuits")
+      Quantity.create(q: 200, mesure:"g", recipe: gratin_b, ingredient:ing4_gratinb)
+
+      ing5_gratinb = Ingredient.create(name: "yaourt nature")
+      Quantity.create(q: 125, mesure:"g", recipe: gratin_b, ingredient:ing5_gratinb)
+
+      ing6_gratinb = Ingredient.create(name: "gruyère rapé")
+      Quantity.create(q: 50, mesure:"g", recipe: gratin_b, ingredient:ing6_gratinb)
+
+      ing7_gratinb = Ingredient.create(name: "ail en poudre")
+      Quantity.create(q: 1, mesure:"Pincée(s)", recipe: gratin_b, ingredient:ing7_gratinb)
+
+      Step.create!(description: "Epluchez votre butternut, videz-le et coupez le en petits morceaux. Faites-les cuire dans une poêle avec ½ verre d’eau pendant 10/15 minutes. Ils ne doivent pas être trop cuits mais fermes.", recipe: gratin_b)
+      Step.create!(description:"Pendant ce temps épluchez les champignons, coupez-les et faites les cuire dan 1 c à soupe d’huile.", recipe: gratin_b)
+      Step.create!(description: "Dans un saladier, mélangez les œufs avec le yaourt, le sel, le poivre et l’ail en poudre. Mélangez bien.", recipe: gratin_b)
+      Step.create!(description: "Dans un plat à gratin, mettez la moitié du butternut au fond, ajoutez les champignons par le dessus puis ensuite le jambon.", recipe: gratin_b)
+      Step.create!(description: "Versez la moitié du mélange œufs/yaourt.", recipe: gratin_b)
+      Step.create!(description: "Ajoutez l’autre moitié du butternut sur le dessus, versez le reste de la préparation. Ajoutez le gruyère râpé.", recipe: gratin_b)
+      Step.create!(description: "Enfournez le gratin pendant 25 à 30 minutes à 180°C.", recipe: gratin_b)
+
     puts "Creating Bric chèvre épinards..."
+      bric = Recipe.create(title:'bric poireaux feta', category:'EZPZ', cooking_time: 20, prep_time: 10, note: "Une recette originale de Maëlys. Vous pouvez aussi mettre de la mache à la place des épinards", user: user_admin)
+      source = File.open("app/assets/images/bric.jpg")
+      bric.photo.attach(io: source, filename: 'bric.jpg', content_type: 'image/jpg')
+      bric.save!
+
+      ing1_bric = Ingredient.create(name: "feuilles de bric")
+      Quantity.create(q: 5, mesure:"(rien)", recipe: bric, ingredient:ing1_bric)
+
+      ing2_bric = Ingredient.create(name: "épinards décongelés")
+      Quantity.create(q: 10, mesure:"C à soupe", recipe: bric, ingredient:ing2_bric)
+
+      ing3_bric = Ingredient.create(name: "bûche de chèvre")
+      Quantity.create(q: 100, mesure:"g", recipe: bric, ingredient:ing3_bric)
+
+      ing4_bric = Ingredient.create(name: "ail en poudre")
+      Quantity.create(q: 1, mesure:"Pincée(s)", recipe: bric, ingredient:ing4_bric)
+
+      Step.create(description:"Préchauffez le four à 200°C.", recipe: bric)
+      Step.create(description:"Faites décongelés les épinards puis assaisonnez-les avec de l'huile, sel, poivre et l'ail en poudre.", recipe: bric)
+      Step.create(description:"Découpez des petits dés de chèvre.", recipe: bric)
+      Step.create!(description:"Coupez les feuilles de bric en deux. Disposez une cuillières à soupe d'épinards ainsi que quelques dés de chèvre dans un angle.", recipe: bric)
+      Step.create!(description:"Pliez la feuille en triangle, tel un samosa. Regardez un tuto pour le pliage, c'est impossible d'expliquer là.", recipe: bric)
+      Step.create(description:"Enfournez jusqu'à ce que ce soit bien doré!", recipe: bric)
+
     puts "Creating Gratin de gnocchis..."
 
 puts 'Finished!'
