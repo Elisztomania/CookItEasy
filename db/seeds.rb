@@ -113,6 +113,40 @@ puts 'Creating recipies...'
       Step.create(description: "Rajoutez la sauce tomate puis assaisonnez à votre convenance (sel, poivre, encore des épices...)", recipe: chili)
       Step.create(description: "Mélangez le riz avec votre super sauce! Ajoutez le fromage et dégustez!", recipe: chili)
 
+    puts "Creating Quiche poireaux féta..."
+      quiche = Recipe.create(title:'Quiche poireaux feta', category:'Classique', cooking_time: 45, prep_time: 20, note: "Une quiche aux poireaux tout ce qu'il y a de plus CLASSIQUE mais la féta fait le différence", user: user_admin)
+      source = File.open("app/assets/images/quiche.jpg")
+      quiche.photo.attach(io: source, filename: 'quiche.jpg', content_type: 'image/jpg')
+      quiche.save!
+
+      ing1_quiche = Ingredient.create(name: "pâte brisée")
+      Quantity.create(q: 1, mesure:"(rien)", recipe: quiche, ingredient:ing1_quiche)
+
+      ing2_quiche = Ingredient.create(name: "œufs")
+      Quantity.create(q: 3, mesure:"(rien)", recipe: quiche, ingredient:ing2_quiche)
+
+      ing3_quiche = Ingredient.create(name: "crème liquide soja")
+      Quantity.create(q: 1, mesure:"Brique(s)", recipe: quiche, ingredient:ing3_quiche)
+
+      ing4_quiche = Ingredient.create(name: "feta")
+      Quantity.create(q: 100, mesure:"g", recipe: quiche, ingredient:ing4_quiche)
+
+      ing5_quiche = Ingredient.create(name: "poireaux")
+      Quantity.create(q: 2, mesure:"(rien)", recipe: quiche, ingredient:ing5_quiche)
+
+      ing6_quiche = Ingredient.create(name: "échalotte (optionnel)")
+      Quantity.create(q: 1, mesure:"(rien)", recipe: quiche, ingredient:ing6_quiche)
+
+      Step.create(description: "Faites préchauffer le four à 200°C.", recipe: quiche)
+      Step.create(description: "Faites revenir l'échalotte avec les poireaux, préalablement coupés et lavés of course.", recipe: quiche)
+      Step.create(description: "Pendant ce temps... mélangez dans un cul de poule (ou autre type de saladier) les œufs et la crème. Assaisonnez à votre guise, sel, poivre et un peu de curry pour ma part ! Coupez ensuite la feta.", recipe: quiche)
+      Step.create(description: "Disposez dans un plat à tarte la pâte brisée et piquez là. Versez-y les poireaux cuits, parsemez les dés de feta préalablement découpés puis le mélange œufs/crème.", recipe: quiche)
+      Step.create(description: "Enfournez pour 45 minutes de cuisson (voir plus selon votre four).", recipe: quiche)
+
+    puts "Creating Gratin butternut..."
+    puts "Creating Bric chèvre épinards..."
+    puts "Creating Gratin de gnocchis..."
+
 puts 'Finished!'
 
 
