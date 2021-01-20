@@ -5,25 +5,25 @@
     <div class="mx-4 my-4">
       <%= simple_form_for @recipe do |f| %>
 
-        <div class="mb-1 px-2 font-semibold"><%= f.label :title, "Titre de la recette" %></div>
-        <%= f.input_field :title, label: 'Titre de la recette', placeholder: "Cookies flocon d'avoines", class:"rounded-full w-full py-2 px-4 italic mb-4"  %>
+        <div class="mb-1 px-2 font-semibold text-sm"><%= f.label :title, "Titre de la recette*" %></div>
+        <%= f.input_field :title, label: 'Titre de la recette', placeholder: "Cookies flocon d'avoines", class:"rounded-full w-full py-2 px-4 italic mb-4 text-sm"  %>
 
-        <div class="mb-1 px-2 font-semibold"><%= f.label :category, "Catégorie" %></div>
-        <%= f.input_field :category, label: 'Catégorie', placeholder: "Dessert", collection: Recipe::CAT, class:"rounded-full w-full py-2 px-4 italic mb-4"  %>
+        <div class="mb-1 px-2 font-semibold text-sm"><%= f.label :category, "Catégorie*" %></div>
+        <%= f.input_field :category, label: 'Catégorie', placeholder: "Dessert", collection: Recipe::CAT, class:"rounded-full w-full py-2 px-4 italic mb-4 text-sm"  %>
 
-        <div class="mb-1 px-2 font-semibold"><%= f.label :prep_time, "Temps de préparation" %></div>
-        <%= f.input_field :prep_time, label: 'Temps de préparation', placeholder: "20 minutes", class:"rounded-full w-full py-2 px-4 italic mb-4"  %>
+        <div class="mb-1 px-2 font-semibold text-sm"><%= f.label :prep_time, "Temps de préparation*" %></div>
+        <%= f.input_field :prep_time, label: 'Temps de préparation', placeholder: "20 minutes", class:"rounded-full w-full py-2 px-4 italic mb-4 text-sm"  %>
 
-        <div class="mb-1 px-2 font-semibold"><%= f.label :cooking_time, "Temps de cuisson" %></div>
-        <%= f.input_field :cooking_time, label: 'Temps de préparation', placeholder: "30 minutes", class:"rounded-full w-full py-2 px-4 italic mb-4" %>
+        <div class="mb-1 px-2 font-semibold text-sm"><%= f.label :cooking_time, "Temps de cuisson*" %></div>
+        <%= f.input_field :cooking_time, label: 'Temps de préparation', placeholder: "30 minutes", class:"rounded-full w-full py-2 px-4 italic mb-4 text-sm" %>
 
 
-        <div class="w-full py-2 px-2 mb-4 font-semibold"><%= f.input :photo, as: :file %></div>
+        <div class="w-full py-2 px-2 mb-4 font-semibold text-sm"><%= f.input :photo, as: :file %></div>
 
-        <div class="mb-1 px-2 font-semibold"><%= f.label :note, "Votre commentaire sur la recette" %></div>
-        <%= f.input_field :note, label: 'Commentaire', placeholder: "Une recette simple mais délicieuse", class:"rounded-lg w-full py-2 px-4 italic mb-4 h-20"  %>
+        <div class="mb-1 px-2 font-semibold text-sm"><%= f.label :note, "Votre commentaire sur la recette*" %></div>
+        <%= f.input_field :note, label: 'Commentaire', placeholder: "Une recette simple mais délicieuse", class:"rounded-lg w-full py-2 px-4 italic mb-4 h-20 text-sm"  %>
 
-        <div class="text-right mt-5"><%= f.button :submit, 'Étape suivante', class:'rounded-full bg-new-black text-lila-deep px-4 py-2'  %></div>
+        <div class="text-right text-xs mt-5"><%= f.button :submit, 'Étape suivante', class:'rounded-full bg-new-black text-lila-deep px-4 py-2'  %></div>
       <% end %>
     </div>
 

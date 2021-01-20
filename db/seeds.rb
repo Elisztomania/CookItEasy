@@ -144,7 +144,7 @@ puts 'Creating recipies...'
       Step.create(description: "Enfournez pour 45 minutes de cuisson (voir plus selon votre four).", recipe: quiche)
 
     puts "Creating Gratin butternut..."
-      gratin_b = Recipe.create(title:'gratin_b poireaux feta', category:'Classique', cooking_time: 30, prep_time: 20, note: "Une recette qui change un peu mais c'est vraiment pas mal, je recommande.", user: user_admin)
+      gratin_b = Recipe.create(title:'Grarin de butternut', category:'Classique', cooking_time: 30, prep_time: 20, note: "Une recette qui change un peu mais c'est vraiment pas mal, je recommande.", user: user_admin)
       source = File.open("app/assets/images/butternut.jpg")
       gratin_b.photo.attach(io: source, filename: 'butternut.jpg', content_type: 'image/jpg')
       gratin_b.save!
@@ -179,7 +179,7 @@ puts 'Creating recipies...'
       Step.create!(description: "Enfournez le gratin pendant 25 à 30 minutes à 180°C.", recipe: gratin_b)
 
     puts "Creating Bric chèvre épinards..."
-      bric = Recipe.create(title:'bric poireaux feta', category:'EZPZ', cooking_time: 20, prep_time: 10, note: "Une recette originale de Maëlys. Vous pouvez aussi mettre de la mache à la place des épinards", user: user_admin)
+      bric = Recipe.create(title:'Bric chèvre épinards', category:'EZPZ', cooking_time: 20, prep_time: 10, note: "Une recette originale de Maëlys. Vous pouvez aussi mettre de la mache à la place des épinards", user: user_admin)
       source = File.open("app/assets/images/bric.jpg")
       bric.photo.attach(io: source, filename: 'bric.jpg', content_type: 'image/jpg')
       bric.save!
