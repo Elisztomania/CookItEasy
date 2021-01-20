@@ -1,45 +1,57 @@
+
 <% if @recipe.photo.attached? %>
     <%= cl_image_tag @recipe.photo.key, height: 288, crop: :fill, gravity: :auto, class:"rounded-md w-full" %>
   <% elsif @recipe.category == "EZPZ" %>
-    <%= image_tag "ezpz.jpg", height: 288, width: 336, crop: :fill, gravity: :auto, class:"rounded-md h-24 w-full" %>
+    <%= image_tag "ezpz.jpg", height: 288, width: 336, crop: :fill, gravity: :auto, class:"rounded-md w-full" %>
   <% elsif @recipe.category == "Classique" %>
-    <%= image_tag "classique.jpg", height: 288, width: 336, crop: :fill, gravity: :auto, class:"rounded-md h-24 w-28" %>
+    <%= image_tag "classique.jpg", height: 288, width: 336, crop: :fill, gravity: :auto, class:"rounded-md w-full" %>
   <% elsif @recipe.category == "Master chef" %>
-    <%= image_tag "master-chef.jpg", height: 288, width: 336, crop: :fill, gravity: :auto, class:"rounded-md h-24 w-28" %>
+    <%= image_tag "master-chef.jpg", height: 288, width: 336, crop: :fill, gravity: :auto, class:"rounded-md w-full" %>
   <% else %>
-    <%= image_tag "dessert.jpg", height: 288, width: 336, crop: :fill, gravity: :auto, class:"rounded-md h-72 w-full" %>
+    <%= image_tag "dessert.jpg", height: 288, width: 336, crop: :fill, gravity: :auto, class:"rounded-md w-full" %>
 <% end %>
 
 
-<div class="p-4 mb-6 bg-creme">
-  <h2 class="text-lg text-center mb-10"><%= @recipe.title %></h2>
+<div class="p-4 mb-6 bg-creme rounded-md">
+  <h2 class="text-xl mb-1"><%= @recipe.title %></h2>
 
-<div class="mb-5">
-  <h3 class="text-base mb-2">Les ingrédients</h3>
+    <div class="flex items-center mb-4 mx-2">
+      <p class="mr-4 text-xs">👩‍🍳 <%= @recipe.prep_time %> min</p>
+      <p class="text-xs">⏲ <%= @recipe.cooking_time %> min</p>
+    </div>
 
-  <ul class="list-inside list-disc">
-    <%  @recipe.quantities.each do |quantity| %>
+  <p class="italic mx-2 mb-5"> « <%= @recipe.note %> » </p>
 
-      <% if quantity.mesure == "Pâte(s)" %>
-          <li class="mb-1"> <%= quantity.q %> <%= quantity.mesure.downcase%> <%= quantity.ingredient.name.downcase %></li>
-      <% elsif quantity.mesure == "(rien)" %>
-          <li class="mb-1"> <%= quantity.q %> <%= quantity.ingredient.name.downcase %></li>
-      <% else %>
-          <li class="mb-1"> <%= quantity.q %> <%= quantity.mesure.downcase  %> de <%= quantity.ingredient.name.downcase %></li>
+  <div class="mb-5">
+    <h3 class="text-base mb-2">Les ingrédients</h3>
+
+    <ul class="list-inside list-disc pl-2">
+      <%  @recipe.quantities.each do |quantity| %>
+
+        <% if quantity.mesure == "Pâte(s)" %>
+            <li class="mb-1 text-sm"> <%= quantity.q %> <%= quantity.mesure.downcase%> <%= quantity.ingredient.name.downcase %></li>
+        <% elsif quantity.mesure == "(rien)" %>
+            <li class="mb-1 text-sm"> <%= quantity.q %> <%= quantity.ingredient.name.downcase %></li>
+        <% else %>
+            <li class="mb-1 text-sm"> <%= quantity.q %> <%= quantity.mesure.downcase  %> de <%= quantity.ingredient.name.downcase %></li>
+        <% end %>
+
       <% end %>
-
-    <% end %>
-  </ul>
-</div>
+    </ul>
+  </div>
 
 
- <div>
+  <div>
     <h3 class="text-base mb-2">La préparation</h3>
 
-      <ol class="list-inside list-decimal">
+      <div class="ml-2">
+        <% i = 0 %>
+
         <%  @recipe.steps.each do |step| %>
-          <li class="mb-1"> <%= step.description %> </li>
+          <% i += 1 %>
+          <p class="mb-2 text-sm"> <b class="mr-2"><%= i %>. </b> <%= step.description %> </p>
         <% end %>
-      </ol>
+      </div>
   </div>
+
 </div>
