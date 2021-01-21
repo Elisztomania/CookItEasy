@@ -8,6 +8,7 @@ module.exports = {
       },
       height: {
         '86': '23rem',
+        '100': '28rem',
       },
       boxShadow: {
         'creme': '4px 4px 0 0 rgba(247, 244, 234, 1)',
