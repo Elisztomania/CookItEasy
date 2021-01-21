@@ -3,7 +3,7 @@
   <%= link_to recipe do %>
   <div class="bg-creme px-2 py-2 rounded-md shadow-lila-deep h-28 mx-1 mb-4">
     <div class="flex">
-      <div class="mr-4 h-28 w-28">
+      <div class="mr-2 h-28 w-28">
         <% if recipe.photo.attached? %>
           <%= cl_image_tag recipe.photo.key, height: 192, width: 224, crop: :fill, gravity: :auto, class:"rounded-md" %>
         <% elsif recipe.category == "EZPZ" %>
