@@ -144,7 +144,7 @@ puts 'Creating recipies...'
       Step.create(description: "Enfournez pour 45 minutes de cuisson (voir plus selon votre four).", recipe: quiche)
 
     puts "Creating Gratin butternut..."
-      gratin_b = Recipe.create(title:'Grarin de butternut', category:'Classique', cooking_time: 30, prep_time: 20, note: "Une recette qui change un peu mais c'est vraiment pas mal, je recommande.", user: user_admin)
+      gratin_b = Recipe.create(title:'Gratin de butternut', category:'Classique', cooking_time: 30, prep_time: 20, note: "Une recette qui change un peu mais c'est vraiment pas mal, je recommande. N'hésitez pas à rajouter du fromage 😉", user: user_admin)
       source = File.open("app/assets/images/butternut.jpg")
       gratin_b.photo.attach(io: source, filename: 'butternut.jpg', content_type: 'image/jpg')
       gratin_b.save!
@@ -179,7 +179,7 @@ puts 'Creating recipies...'
       Step.create!(description: "Enfournez le gratin pendant 25 à 30 minutes à 180°C.", recipe: gratin_b)
 
     puts "Creating Bric chèvre épinards..."
-      bric = Recipe.create(title:'Bric chèvre épinards', category:'EZPZ', cooking_time: 20, prep_time: 10, note: "Une recette originale de Maëlys. Vous pouvez aussi mettre de la mache à la place des épinards", user: user_admin)
+      bric = Recipe.create(title:'Bric chèvre épinards', category:'EZPZ', cooking_time: 20, prep_time: 10, note: "Une recette originale de Maëlys. Vous pouvez aussi mettre de la mache à la place des épinards.", user: user_admin)
       source = File.open("app/assets/images/bric.jpg")
       bric.photo.attach(io: source, filename: 'bric.jpg', content_type: 'image/jpg')
       bric.save!
@@ -204,6 +204,28 @@ puts 'Creating recipies...'
       Step.create(description:"Enfournez jusqu'à ce que ce soit bien doré!", recipe: bric)
 
     puts "Creating Gratin de gnocchis..."
+      grating = Recipe.create(title:'Gratin de gnocchis', category:'EZPZ', cooking_time: 30, prep_time: 5, note: "Encore une recette avec 4 ingrédients seulement : simple, pas chers et gourmand !", user: user_admin)
+      source = File.open("app/assets/images/gratin.jpg")
+      grating.photo.attach(io: source, filename: 'gratin.jpg', content_type: 'image/jpg')
+      grating.save!
+
+      ing1_grating = Ingredient.create(name: "gnocchi pommes de terre")
+      Quantity.create(q: 300, mesure:"g", recipe: grating, ingredient:ing1_grating)
+
+      ing2_grating = Ingredient.create(name: "crème liquide")
+      Quantity.create(q: 10, mesure:"cl", recipe: grating, ingredient:ing2_grating)
+
+      ing3_grating = Ingredient.create(name: "fromage rapé (mozza par ex)")
+      Quantity.create(q: 50, mesure:"g", recipe: grating, ingredient:ing3_grating)
+
+      ing4_grating = Ingredient.create(name: "dés de jambon")
+      Quantity.create(q: 75, mesure:"g", recipe: grating, ingredient:ing4_grating)
+
+      Step.create(description:"Préchauffez le four à 200°C.", recipe: grating)
+      Step.create(description:"Faites cuire les gnocchis dans de l'eau bouillante salée. Une fois cuits ils remontent à la surface.", recipe: grating)
+      Step.create(description:"Disposez les gnocchis cuits dans un plat à gratin, ajoutez le jambon puis versez la crème.", recipe: grating)
+      Step.create(description:"Assaisonnez : sel, poivre et perso un peu de curry. Mélangez le tout. Ajoutez le fromage rapé on top!", recipe: grating)
+      Step.create(description:"Enfounez 30 à 45 minutes selon votre convenance.", recipe: grating)
 
 puts 'Finished!'
 
