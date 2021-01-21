@@ -1,9 +1,22 @@
 <h2 class="text-center text-lg mb-4">📚 Trouvez la recette parfaite !</h2>
 
+<!-- Search bar -->
+  <div class="text-center mb-5">
+    <%= form_tag recipes_path, method: :get do %>
+      <%= text_field_tag :query, params[:query], class: "w-52 rounded-full px-4 py-2 text-xs italic ", placeholder: "Cherchez une recette..." %>
+      <%= button_tag type: 'submit', class: "ml-2 rounded-full bg-new-black text-lila-deep h-8 w-8 text-center" do %>
+        <i class="fas fa-search"></i>
+      <% end %>
+    <% end %>
+  </div>
+<!-- Fin search bar -->
+
 <!-- Cards recipies -->
-  <%= render 'cards-recipes', recipes: @recipes %>
+  <div class="h-96 overflow-scroll">
+    <%= render 'cards-recipes', recipes: @recipes %>
+  </div>
 <!-- Fin cards -->
 
 
 <!-- MENU BAR -->
-<%= render 'shared/menubar' %>
+  <%= render 'shared/menubar' %>
