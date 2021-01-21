@@ -3,7 +3,16 @@ class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update]
 
   def index
-    @recipes = Recipe.all
+    if params[:query].present?
+      sql_query = " \
+      recipes.title @@ :query OR
+      recipes.category ILIKE :query \
+      "
+      @recipes = Recipe.where(sql_query, query: "%#{params[:query]}%")
+
+    else
+      @recipes = Recipe.all
+    end
   end
 
   def show
