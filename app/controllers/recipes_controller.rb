@@ -7,7 +7,6 @@ class RecipesController < ApplicationController
 
     @recipes = @recipes.where(category: params[:category]) if params[:category].present?
     @recipes = @recipes.where('title like %?%', params[:query]) if params[:query].present?
-
   end
 
   def show

@@ -1,15 +1,21 @@
-
-<% if @recipe.photo.attached? %>
-    <%= cl_image_tag @recipe.photo.key, height: 288, crop: :fill, gravity: :auto, class:"rounded-md w-full" %>
-  <% elsif @recipe.category == "EZPZ" %>
-    <%= image_tag "ezpz.jpg", height: 288, width: 336, crop: :fill, gravity: :auto, class:"rounded-md w-full" %>
-  <% elsif @recipe.category == "Classique" %>
-    <%= image_tag "classique.jpg", height: 288, width: 336, crop: :fill, gravity: :auto, class:"rounded-md w-full" %>
-  <% elsif @recipe.category == "Master chef" %>
-    <%= image_tag "master-chef.jpg", height: 288, width: 336, crop: :fill, gravity: :auto, class:"rounded-md w-full" %>
-  <% else %>
-    <%= image_tag "dessert.jpg", height: 288, width: 336, crop: :fill, gravity: :auto, class:"rounded-md w-full" %>
-<% end %>
+<div class="">
+  <div>
+    <%= link_to recipes_path do  %>
+      <i class="fas fa-arrow-circle-left"></i>
+    <% end %>
+  </div>
+  <% if @recipe.photo.attached? %>
+      <%= cl_image_tag @recipe.photo.key, height: 288, crop: :fill, gravity: :auto, class:"rounded-md w-full" %>
+    <% elsif @recipe.category == "EZPZ" %>
+      <%= image_tag "ezpz.jpg", height: 288, width: 336, crop: :fill, gravity: :auto, class:"rounded-md w-full" %>
+    <% elsif @recipe.category == "Classique" %>
+      <%= image_tag "classique.jpg", height: 288, width: 336, crop: :fill, gravity: :auto, class:"rounded-md w-full" %>
+    <% elsif @recipe.category == "Master chef" %>
+      <%= image_tag "master-chef.jpg", height: 288, width: 336, crop: :fill, gravity: :auto, class:"rounded-md w-full" %>
+    <% else %>
+      <%= image_tag "dessert.jpg", height: 288, width: 336, crop: :fill, gravity: :auto, class:"rounded-md w-full" %>
+  <% end %>
+</div>
 
 
 <div class="p-4 mb-6 bg-creme rounded-md">

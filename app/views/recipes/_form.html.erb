@@ -21,7 +21,11 @@
         <div class="mb-1 px-2 font-semibold text-sm"><%= f.label :note, "Votre commentaire sur la recette*" %></div>
         <%= f.input_field :note, label: 'Commentaire', placeholder: "Une recette simple mais délicieuse", class:"rounded-lg w-full py-2 px-4 italic mb-4 h-20 text-sm"  %>
 
-        <div class="text-right text-xs mt-5"><%= f.button :submit, 'Étape suivante', class:'rounded-full bg-new-black text-lila-deep px-4 py-2'  %></div>
+        <% if @recipe.new_record? %>
+          <div class="text-right text-xs mt-5"><%= f.button :submit, 'Étape suivante', class:'rounded-full bg-new-black text-lila-deep px-4 py-2'  %></div>
+        <% else %>
+          <div class="text-right text-xs mt-5"><%= f.button :submit, 'Mettre à jour', class:'rounded-full bg-new-black text-lila-deep px-4 py-2'  %></div>
+        <% end %>
       <% end %>
     </div>
 
