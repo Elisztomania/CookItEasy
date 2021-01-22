@@ -8,15 +8,6 @@ class RecipesController < ApplicationController
     @recipes = @recipes.where(category: params[:category]) if params[:category].present?
     @recipes = @recipes.where('title like %?%', params[:query]) if params[:query].present?
 
-    # if params[:query].present?
-    #   sql_query = " \
-    #   recipes.title @@ :query OR
-    #   recipes.category ILIKE :query \
-    #   "
-    #   @recipes = Recipe.where(sql_query, query: "%#{params[:query]}%")
-    # else
-    #   @recipes = Recipe.all
-    # end
   end
 
   def show

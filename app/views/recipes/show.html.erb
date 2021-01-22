@@ -15,6 +15,12 @@
 <div class="p-4 mb-6 bg-creme rounded-md">
   <h2 class="text-xl mb-1"><%= @recipe.title %></h2>
 
+  <% if current_user != nil && current_user == @recipe.user %>
+    <%= link_to edit_recipe_path(@recipe.id) do %>
+      <i class="fas fa-pencil-alt hover:text-gray-400"></i>
+    <% end %>
+  <% end %>
+
     <div class="flex items-center mb-4 mx-2">
       <p class="mr-4 text-xs">👩‍🍳 <%= @recipe.prep_time %> min</p>
       <p class="text-xs">⏲ <%= @recipe.cooking_time %> min</p>
