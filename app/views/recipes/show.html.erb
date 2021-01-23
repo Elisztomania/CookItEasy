@@ -1,31 +1,35 @@
-<div class="">
-  <div>
+<div class="static">
+  <div class="absolute ml-2 mt-1">
     <%= link_to recipes_path do  %>
-      <i class="fas fa-arrow-circle-left"></i>
+      <i class="fas fa-arrow-circle-left text-new-black text-lg"></i>
     <% end %>
   </div>
   <% if @recipe.photo.attached? %>
-      <%= cl_image_tag @recipe.photo.key, height: 288, crop: :fill, gravity: :auto, class:"rounded-md w-full" %>
+      <%= cl_image_tag @recipe.photo.key, height: 432, width: 504, crop: :fill, gravity: :auto, class:"rounded-t-md" %>
     <% elsif @recipe.category == "EZPZ" %>
-      <%= image_tag "ezpz.jpg", height: 288, width: 336, crop: :fill, gravity: :auto, class:"rounded-md w-full" %>
+      <%= image_tag "ezpz.jpg", height: 432, width: 504, crop: :fill, gravity: :auto, class:"rounded-t-md w-full" %>
     <% elsif @recipe.category == "Classique" %>
-      <%= image_tag "classique.jpg", height: 288, width: 336, crop: :fill, gravity: :auto, class:"rounded-md w-full" %>
+      <%= image_tag "classique.jpg", height: 432, width: 504, crop: :fill, gravity: :auto, class:"rounded-t-md w-full" %>
     <% elsif @recipe.category == "Master chef" %>
-      <%= image_tag "master-chef.jpg", height: 288, width: 336, crop: :fill, gravity: :auto, class:"rounded-md w-full" %>
+      <%= image_tag "master-chef.jpg", height: 432, width: 504, crop: :fill, gravity: :auto, class:"rounded-t-md w-full" %>
     <% else %>
-      <%= image_tag "dessert.jpg", height: 288, width: 336, crop: :fill, gravity: :auto, class:"rounded-md w-full" %>
+      <%= image_tag "dessert.jpg", height: 432, width: 504, crop: :fill, gravity: :auto, class:"rounded-t-md w-full" %>
   <% end %>
 </div>
 
 
 <div class="p-4 mb-6 bg-creme rounded-md">
-  <h2 class="text-xl mb-1"><%= @recipe.title %></h2>
+  <div class="flex">
+    <h2 class="text-xl mb-1"><%= @recipe.title %></h2>
 
-  <% if current_user != nil && current_user == @recipe.user %>
-    <%= link_to edit_recipe_path(@recipe.id) do %>
-      <i class="fas fa-pencil-alt hover:text-gray-400"></i>
-    <% end %>
-  <% end %>
+    <div class="ml-1 mt-2">
+      <% if current_user != nil && current_user == @recipe.user %>
+        <%= link_to edit_recipe_path(@recipe.id) do %>
+          <i class="fas fa-pencil-alt text-xxs text-new-black"></i>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 
     <div class="flex items-center mb-4 mx-2">
       <p class="mr-4 text-xs">👩‍🍳 <%= @recipe.prep_time %> min</p>
@@ -67,3 +71,4 @@
   </div>
 
 </div>
+

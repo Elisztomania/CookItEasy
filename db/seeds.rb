@@ -209,7 +209,7 @@ puts 'Creating recipies...'
       grating.photo.attach(io: source, filename: 'gratin.jpg', content_type: 'image/jpg')
       grating.save!
 
-      ing1_grating = Ingredient.create(name: "gnocchi pommes de terre")
+      ing1_grating = Ingredient.create(name: "gnocchis de pomme de terre")
       Quantity.create(q: 300, mesure:"g", recipe: grating, ingredient:ing1_grating)
 
       ing2_grating = Ingredient.create(name: "crème liquide")
