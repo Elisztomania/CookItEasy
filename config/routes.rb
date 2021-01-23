@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'recipes/myrecipes', to: 'recipes#show_my', as: 'my_recipes'
   resources :recipes, only: [:index, :show, :create, :new, :edit, :update] do
-    resources :quantities, only: [:create, :new]
+    resources :quantities, only: [:create, :new, :edit, :update]
     resources :ingredients, only: [:create, :new]
-    resources :steps, only: [:create, :new]
+    resources :steps, only: [:create, :new, :edit, :update]
   end
 end
