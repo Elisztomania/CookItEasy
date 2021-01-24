@@ -19,7 +19,7 @@ puts 'Creating recipies...'
     palmiers.save!
 
     ing1_p = Ingredient.create(name: "pâte feuilletée")
-    Quantity.create(q: 1, mesure:"(rien)", recipe: palmiers, ingredient:ing1_p)
+    Quantity.create!(q: 1, mesure:"(rien)", recipe: palmiers, ingredient:ing1_p)
 
     ing2_p = Ingredient.create(name: "sucre roux")
     Quantity.create(q: 30, mesure: "g", recipe: palmiers, ingredient: ing2_p)
