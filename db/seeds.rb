@@ -227,6 +227,83 @@ puts 'Creating recipies...'
       Step.create(description:"Assaisonnez : sel, poivre et perso un peu de curry. Mélangez le tout. Ajoutez le fromage rapé on top!", recipe: grating)
       Step.create(description:"Enfounez 30 à 45 minutes selon votre convenance.", recipe: grating)
 
+      puts "Creating Cookies..."
+        cookies = Recipe.create(title:'Cookies', category:'Dessert', cooking_time: 15, prep_time: 15, note: "Recette de base à pimper avec ce que vous aimez : noix, M&MS, 3 choco...", user: user_admin)
+        source = File.open("app/assets/images/cookies.jpg")
+        cookies.photo.attach(io: source, filename: 'cookies.jpg', content_type: 'image/jpg')
+        cookies.save!
+
+        ing1_cookies = Ingredient.create(name: "beurre mou")
+        Quantity.create(q: 75, mesure:"g", recipe: cookies, ingredient:ing1_cookies)
+
+        ing2_cookies = Ingredient.create(name: "sucre roux")
+        Quantity.create(q: 100, mesure:"g", recipe: cookies, ingredient:ing2_cookies)
+
+        ing3_cookies = Ingredient.create(name: "sucre vanillé")
+        Quantity.create(q: 2, mesure:"Sachet(s)", recipe: cookies, ingredient:ing3_cookies)
+
+        ing4_cookies = Ingredient.create(name: "œuf")
+        Quantity.create(q: 1, mesure:"(rien)", recipe: cookies, ingredient:ing4_cookies)
+
+        ing5_cookies = Ingredient.create(name: "farine")
+        Quantity.create(q: 150, mesure:"g", recipe: cookies, ingredient:ing5_cookies)
+
+        ing6_cookies = Ingredient.create(name: "levure")
+        Quantity.create(q: 11, mesure:"g", recipe: cookies, ingredient:ing6_cookies)
+
+        ing7_cookies = Ingredient.create(name: "pépites de chocolat")
+        Quantity.create(q: 1, mesure:"Sachet(s)", recipe: cookies, ingredient:ing7_cookies)
+
+        Step.create(description:"Préchauffez le four à 180°C.", recipe: cookies)
+        Step.create(description:"Mélangez le beurre mou, le sucre et le sucre vanillé.", recipe: cookies)
+        Step.create(description:"Ajoutez l'œuf et mélangez.", recipe: cookies)
+        Step.create(description:"Rajoutez la farine et la levure petit à petit.", recipe: cookies)
+        Step.create(description:"Reste plus qu'à ajouter les pépites de chocolat (et autres toppings).", recipe: cookies)
+        Step.create(description:"Disposez des petites boules de pâte sur une plaque sulfurisée.", recipe: cookies)
+        Step.create(description:"Enfournez pour 10 à 12 minutes.", recipe: cookies)
+
+        puts "Creating Gâteau aux carottes..."
+          carrot = Recipe.create(title:'Gâteau aux carottes', category:'Dessert', cooking_time: 60, prep_time: 15, note: "Une recette de gâteau aux carottes made in England : recette secrète enjoy ❤️", user: user_admin)
+          source = File.open("app/assets/images/carrot-cake.jpg")
+          carrot.photo.attach(io: source, filename: 'carrot-cake.jpg', content_type: 'image/jpg')
+          carrot.save!
+
+          ing1_carrot = Ingredient.create(name: "carottes rapées")
+          Quantity.create(q: 300, mesure:"g", recipe: carrot, ingredient:ing1_carrot)
+
+          ing2_carrot = Ingredient.create(name: "beurre fondu")
+          Quantity.create(q: 150, mesure:"g", recipe: carrot, ingredient:ing2_carrot)
+
+          ing3_carrot = Ingredient.create(name: "sucre roux")
+          Quantity.create(q: 200, mesure:"g", recipe: carrot, ingredient:ing3_carrot)
+
+          ing4_carrot = Ingredient.create(name: "farine")
+          Quantity.create(q: 200, mesure:"g", recipe: carrot, ingredient:ing4_carrot)
+
+          ing5_carrot = Ingredient.create(name: "levure")
+          Quantity.create(q: 1, mesure:"Sachet(s)", recipe: carrot, ingredient:ing5_carrot)
+
+          ing6_carrot = Ingredient.create(name: "cannelle")
+          Quantity.create(q: 1, mesure:"C à café", recipe: carrot, ingredient:ing6_carrot)
+
+          ing7_carrot = Ingredient.create(name: "muscade")
+          Quantity.create(q: 1, mesure:"C à café", recipe: carrot, ingredient:ing7_carrot)
+
+          ing8_carrot = Ingredient.create(name: "raisins secs")
+          Quantity.create(q: 100, mesure:"g", recipe: carrot, ingredient:ing8_carrot)
+
+          ing9_carrot = Ingredient.create(name: "noix")
+          Quantity.create(q: 50, mesure:"g", recipe: carrot, ingredient:ing9_carrot)
+
+          ing6_carrot = Ingredient.create(name: "lait")
+          Quantity.create(q: 3, mesure:"C à soupe", recipe: carrot, ingredient:ing6_carrot)
+
+          Step.create(description:"Préchauffez le four à 170°C.", recipe: carrot)
+          Step.create(description:"Mélangez le beurre et le sucre. Puis les œufs.", recipe: carrot)
+          Step.create(description:"Ajoutez les carottes rapées. Rajoutez la farine, la levure et les épices progressivement.", recipe: carrot)
+          Step.create(description:"Ajoutez les raisins, les noix puis le lait.", recipe: carrot)
+          Step.create(description:"Enfournez pour 1 heurre de cuisson.", recipe: carrot)
+
 puts 'Finished!'
 
 
