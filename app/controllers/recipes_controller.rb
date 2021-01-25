@@ -10,6 +10,7 @@ class RecipesController < ApplicationController
   end
 
   def show
+    @favorite = @recipe.favorites.find_by(user: current_user)
   end
 
   def new

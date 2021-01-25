@@ -17,6 +17,25 @@
   <% end %>
 </div>
 
+<!-- Fav btn -->
+<% if current_user != nil %>
+  <% if @favorite %>
+    <%= link_to favorite_path(@favorite), method: :delete do %>
+      <i class="fas fa-heart"> </i>
+    <% end %>
+  <% else %>
+    <%= link_to recipe_favorites_path(@recipe), method: :post do %>
+      <i class="far fa-heart"></i>
+    <% end %>
+  <% end %>
+<% end %>
+<!-- Fav btn -->
+
+
+
+
+
+
 
 <div class="p-4 mb-6 bg-creme rounded-md">
   <div class="flex">
