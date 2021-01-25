@@ -18,7 +18,25 @@
 </div>
 
 
-<div class="p-4 mb-6 bg-creme rounded-md">
+
+<div class="p-4 mb-6 bg-creme rounded-b-md relative">
+<!-- Fav btn -->
+  <div class="absolute -top-3.5 right-2 rounded-full bg-creme h-10 w-10 flex items-center justify-center text-xl text-lila-deep">
+    <% if current_user != nil %>
+      <% if @favorite %>
+        <%= link_to favorite_path(@favorite), method: :delete do %>
+          <i class="fas fa-heart"> </i>
+        <% end %>
+      <% else %>
+        <%= link_to recipe_favorites_path(@recipe), method: :post do %>
+          <i class="far fa-heart"></i>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+<!-- Fav btn -->
+
+<!-- Top card title -->
   <div class="flex">
     <h2 class="text-xl mb-1"><%= @recipe.title %></h2>
 
@@ -36,8 +54,9 @@
       <p class="text-xs">⏲ <%= @recipe.cooking_time %> min</p>
     </div>
 
-  <p class="italic mx-2 mb-5"> « <%= @recipe.note %> » </p>
+  <p class="italic mx-2 mb-5 text-lila-deep font-normal"> « <%= @recipe.note %> » <b> - <%= @recipe.user.username.capitalize %> </b> </p>
 
+<!-- Ingredients list -->
   <div class="mb-5">
     <h3 class="text-base mb-2">Les ingrédients</h3>
 
@@ -56,7 +75,7 @@
     </ul>
   </div>
 
-
+<!-- Steps -->
   <div>
     <h3 class="text-base mb-2">La préparation</h3>
 
