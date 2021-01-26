@@ -2,7 +2,8 @@
 
   <div class="h-100 overflow-scroll">
 
- <% @fav_recipes.each do |recipe| %>
+  <% if @fav_recipes.count != 0 %>
+    <% @fav_recipes.each do |recipe| %>
       <%= link_to recipe do %>
       <div class="bg-creme px-2 py-2 rounded-md shadow-lila-deep h-28 mx-1 mb-4">
 
@@ -37,6 +38,20 @@
       </div>
       <% end %>
     <% end %>
+
+  <% else %>
+
+    <%= image_tag "cute-sushi.png", class:""%>
+
+    <h3 class="text-sm text-center"> Vous n'avez pas encore de recette en favoris.</h3>
+
+    <div class="mt-4 text-center">
+      <%= link_to "Voir les recettes", recipes_path, class:"px-4 py-2 rounded-full font-semibold text-xs bg-lila-deep"  %>
+    </div>
+
+
+
+  <% end %>
 
   </div>
 
