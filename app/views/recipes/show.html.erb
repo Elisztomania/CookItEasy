@@ -40,6 +40,7 @@
   <div class="flex">
     <h2 class="text-xl mb-1"><%= @recipe.title %></h2>
 
+<!-- Edit -->
     <div class="ml-1 mt-2">
       <% if current_user != nil && current_user == @recipe.user %>
         <%= link_to edit_recipe_path(@recipe.id) do %>
@@ -54,7 +55,8 @@
       <p class="text-xs">⏲ <%= @recipe.cooking_time %> min</p>
     </div>
 
-  <p class="italic mx-2 mb-5 text-lila-deep font-normal"> « <%= @recipe.note %> » <b> - <%= @recipe.user.username.capitalize %> </b> </p>
+  <p class="italic mx-2 mb-5 text-lila-deep font-normal"> « <%= @recipe.note %> » </br>
+  <b> - <%= @recipe.user.username.capitalize %> </b> </p>
 
 <!-- Ingredients list -->
   <div class="mb-5">
@@ -80,11 +82,21 @@
     <h3 class="text-base mb-2">La préparation</h3>
 
       <div class="ml-2">
-        <% i = 0 %>
 
-        <%  @recipe.steps.each do |step| %>
+        <%  @recipe.steps.sort_by(&:created_at).each_with_index do |step, i| %>
           <% i += 1 %>
-          <p class="mb-2 text-sm"> <b class="mr-2"><%= i %>. </b> <%= step.description %> </p>
+
+          <p class="mb-2 text-sm"> <b class="mr-2"><%= i %>. </b> <%= step.description %>
+
+            <% if current_user != nil && current_user == @recipe.user %>
+              <%= link_to edit_recipe_step_path(@recipe.id, step.id) do %>
+                <i class="fas fa-pencil-alt text-xxs text-lila-deep ml-0.5"></i>
+              <% end %>
+            <% end %>
+
+          </p>
+
+
         <% end %>
       </div>
   </div>
