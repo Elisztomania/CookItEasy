@@ -1,0 +1,22 @@
+<h2 class="text-center text-lg mb-5">👩‍🍳 Modifier votre étape ⤵</h2>
+
+  <div class="bg-lila-deep p-2 rounded-md shadow-creme mb-4">
+
+    <div class="mx-4 my-4">
+
+      <h3 class="text-base mt-4 mb-3">L'étape...</h3>
+
+      <%= simple_form_for [@recipe, @step], remote: true do |f| %>
+            <div class="">
+              <%= f.input_field :description, placeholder: "Décrivez chaque étape de la recette...", class: 'rounded-md w-full px-4 py-4 italic text-sm' %>
+
+              <div class="text-right text-right text-xs mt-5">
+                <%= f.button :submit, 'Modifier', class:'rounded-full bg-new-black text-lila-deep px-4 py-2'  %>
+              </div>
+            </div>
+
+      <% end %>
+
+    </div>
+
+  </div>
