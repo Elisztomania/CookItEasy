@@ -51,8 +51,8 @@
   </div>
 
     <div class="flex items-center mb-4 mx-2">
-      <p class="mr-4 text-xs">👩‍🍳 <%= @recipe.prep_time %> min</p>
-      <p class="text-xs">⏲ <%= @recipe.cooking_time %> min</p>
+      <p class="mr-4 text-xs">👩‍🍳 <%= min_conversion(@recipe.prep_time) %></p>
+      <p class="text-xs">⏲ <%= min_conversion(@recipe.cooking_time) %></p>
     </div>
 
   <p class="italic mx-2 mb-5 text-lila-deep font-normal"> « <%= @recipe.note %> » </br>
@@ -112,4 +112,3 @@
   </div>
 
 </div>
-
