@@ -1,5 +1,6 @@
 class QuantitiesController < ApplicationController
-  before_action :set_recipe, only: [:new, :create]
+  before_action :set_recipe, only: [:new, :create, :edit, :update]
+  before_action :set_quantity, only: [:edit, :update]
 
   def new
     @quantity = Quantity.new
@@ -18,10 +19,25 @@ class QuantitiesController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @quantity.update(quantity_params)
+      redirect_to @recipe, notice: 'Ingrédient bien modifié!'
+    else
+      render :new
+    end
+  end
+
   private
 
   def set_recipe
     @recipe = Recipe.find(params[:recipe_id])
+  end
+
+  def set_quantity
+    @quantity = Quantity.find(params[:id])
   end
 
   def quantity_params

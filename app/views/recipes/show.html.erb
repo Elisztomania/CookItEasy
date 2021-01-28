@@ -60,7 +60,17 @@
 
 <!-- Ingredients list -->
   <div class="mb-5">
-    <h3 class="text-base mb-2">Les ingrédients</h3>
+    <div class="flex">
+      <h3 class="text-base mb-2">Les ingrédients</h3>
+
+      <div class="ml-1">
+        <% if current_user != nil && current_user == @recipe.user %>
+          <%= link_to new_recipe_quantity_path(@recipe.id), class:"text-xs text-lila-deep text-center" do %>
+            <i class="fas fa-plus-circle"></i>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
 
     <ul class="list-inside list-disc pl-2">
       <%  @recipe.quantities.each do |quantity| %>
