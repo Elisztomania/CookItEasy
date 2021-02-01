@@ -21,8 +21,8 @@
 
 <div class="p-4 mb-6 bg-creme rounded-b-md relative">
 <!-- Fav btn -->
-  <div class="absolute -top-3.5 right-2 rounded-full bg-creme h-10 w-10 flex items-center justify-center text-xl text-lila-deep">
-    <% if current_user != nil %>
+  <% if current_user != nil %>
+    <div class="absolute -top-3.5 right-2 rounded-full bg-creme h-10 w-10 flex items-center justify-center text-xl text-lila-deep">
       <% if @favorite %>
         <%= link_to favorite_path(@favorite), method: :delete do %>
           <i class="fas fa-heart"> </i>
@@ -32,8 +32,8 @@
           <i class="far fa-heart"></i>
         <% end %>
       <% end %>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 <!-- Fav btn -->
 
 <!-- Top card title -->
