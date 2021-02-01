@@ -1,11 +1,11 @@
-<h2 class="text-center text-lg mb-3">❤️  Mes recettes favorites !</h2>
+<h2 class="text-center mb-3">❤️  Mes recettes favorites !</h2>
 
-  <div class="h-100 overflow-scroll">
+  <div class="h-100 overflow-scroll md:h-110 md:mb-5">
 
   <% if @fav_recipes.count != 0 %>
     <% @fav_recipes.each do |recipe| %>
       <%= link_to recipe do %>
-      <div class="bg-creme px-2 py-2 rounded-md shadow-lila-deep h-28 mx-1 mb-4">
+      <div class="bg-creme px-2 py-2 rounded-md shadow-lila-deep h-28 mx-1 mb-3 md:w-96 md:mx-auto">
 
         <div class="flex">
           <div class="mr-2 h-28 w-28">
@@ -41,7 +41,7 @@
 
   <% else %>
 
-    <%= image_tag "cute-sushi.png", class:""%>
+    <%= image_tag "cute-sushi.png", class:"md:h-3/4 md:mx-auto"%>
 
     <h3 class="text-sm text-center"> Vous n'avez pas encore de recette en favoris.</h3>
 

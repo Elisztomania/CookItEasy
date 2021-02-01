@@ -211,7 +211,7 @@ puts 'Creating recipies...'
     Quantity.create(q: 300, mesure:"g", recipe: grating, ingredient:ing1_grating)
 
     ing2_grating = Ingredient.create(name: "crème liquide")
-    Quantity.create(q: 10, mesure:"cl", recipe: grating, ingredient:ing2_grating)
+    Quantity.create(q: 10, mesure:"Cl", recipe: grating, ingredient:ing2_grating)
 
     ing3_grating = Ingredient.create(name: "fromage rapé (mozza par ex)")
     Quantity.create(q: 50, mesure:"g", recipe: grating, ingredient:ing3_grating)
@@ -324,7 +324,7 @@ puts 'Creating recipies...'
     Quantity.create(q: 1, mesure:"C à café", recipe: pancakes, ingredient:ing5_pancakes)
 
     ing6_pancakes = Ingredient.create(name: "lait")
-    Quantity.create(q: 200, mesure:"ml", recipe: pancakes, ingredient:ing6_pancakes)
+    Quantity.create(q: 200, mesure:"Ml", recipe: pancakes, ingredient:ing6_pancakes)
 
     Step.create(description:"Battre l'œuf avec le sucre.", recipe: pancakes)
     Step.create(description:"Rajoutez l'huile.", recipe: pancakes)
@@ -354,7 +354,7 @@ puts 'Creating recipies...'
     Quantity.create(q: 4, mesure:"(rien)", recipe: cake_sale, ingredient:ing5_cake)
 
     ing6_cake = Ingredient.create(name: "lait")
-    Quantity.create(q: 10, mesure:"cl", recipe: cake_sale, ingredient:ing6_cake)
+    Quantity.create(q: 10, mesure:"Cl", recipe: cake_sale, ingredient:ing6_cake)
 
     ing7_cake = Ingredient.create(name: "levure")
     Quantity.create(q: 1, mesure:"Sachet(s)", recipe: cake_sale, ingredient:ing7_cake)
