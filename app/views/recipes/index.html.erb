@@ -1,9 +1,9 @@
-<h2 class="text-center text-lg mb-3">📚 Trouvez la recette parfaite !</h2>
+<h2 class="text-center mb-3">📚 Trouvez la recette parfaite !</h2>
 
 <!-- Search bar -->
   <div class="text-center mb-3">
     <%= form_tag recipes_path, method: :get do %>
-      <%= text_field_tag :query, params[:query], class: "w-52 rounded-full px-4 py-2 text-xs italic ", placeholder: "Cherchez une recette..." %>
+      <%= text_field_tag :query, params[:query], class: "w-56 rounded-full px-4 py-2 text-xs italic ", placeholder: "Cherchez une recette..." %>
       <%= button_tag type: 'submit', class: "ml-2 rounded-full bg-new-black text-lila-deep h-8 w-8 text-center" do %>
         <i class="fas fa-search"></i>
       <% end %>
@@ -19,7 +19,7 @@
     <%= link_to 'Dessert', recipes_path(category: 'Dessert'), class:"px-2 py-1 rounded-full text-xxs border-solid border border-new-black" %>
   </div>
 <!-- Cards recipies -->
-  <div class="h-96 overflow-scroll">
+  <div class="h-86 overflow-scroll">
     <%= render 'cards-recipes', recipes: @recipes %>
   </div>
 <!-- Fin cards -->
