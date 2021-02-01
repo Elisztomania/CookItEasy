@@ -1,19 +1,19 @@
 <div class="static">
-  <div class="absolute ml-2 mt-1">
+  <div class="absolute ml-2 mt-1 lg:mt-2">
     <%= link_to recipes_path do  %>
       <i class="fas fa-arrow-circle-left text-new-black text-lg"></i>
     <% end %>
   </div>
   <% if @recipe.photo.attached? %>
-      <%= cl_image_tag @recipe.photo.key, height: 432, width: 504, crop: :fill, gravity: :auto, class:"rounded-t-md" %>
+      <%= cl_image_tag @recipe.photo.key, height: 432, width: 504, crop: :fill, gravity: :auto, class:"rounded-t-md md:w-full" %>
     <% elsif @recipe.category == "EZPZ" %>
-      <%= image_tag "ezpz.jpg", height: 432, width: 504, crop: :fill, gravity: :auto, class:"rounded-t-md w-full" %>
+      <%= image_tag "ezpz.jpg", height: 432, width: 504, crop: :fill, gravity: :auto, class:"rounded-t-md md:w-full" %>
     <% elsif @recipe.category == "Classique" %>
-      <%= image_tag "classique.jpg", height: 432, width: 504, crop: :fill, gravity: :auto, class:"rounded-t-md w-full" %>
+      <%= image_tag "classique.jpg", height: 432, width: 504, crop: :fill, gravity: :auto, class:"rounded-t-md md:w-full" %>
     <% elsif @recipe.category == "Master chef" %>
-      <%= image_tag "master-chef.jpg", height: 432, width: 504, crop: :fill, gravity: :auto, class:"rounded-t-md w-full" %>
+      <%= image_tag "master-chef.jpg", height: 432, width: 504, crop: :fill, gravity: :auto, class:"rounded-t-md md:w-full" %>
     <% else %>
-      <%= image_tag "dessert.jpg", height: 432, width: 504, crop: :fill, gravity: :auto, class:"rounded-t-md w-full" %>
+      <%= image_tag "dessert.jpg", height: 432, width: 504, crop: :fill, gravity: :auto, class:"rounded-t-md md:w-full" %>
   <% end %>
 </div>
 

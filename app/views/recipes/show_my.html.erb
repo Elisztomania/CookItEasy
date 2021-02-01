@@ -1,12 +1,12 @@
 <h2 class="text-center mb-3">🍪  Mes recettes publiées !</h2>
 
-  <div class="h-100 overflow-scroll">
+  <div class="h-100 overflow-scroll md:h-110 md:mb-5">
 
     <% if @myrecipes.count != 0 %>
 
       <% @myrecipes.each do |recipe| %>
         <%= link_to recipe do %>
-          <div class="bg-creme px-2 py-2 rounded-md shadow-lila-deep h-28 mx-1 mb-3">
+          <div class="bg-creme px-2 py-2 rounded-md shadow-lila-deep h-28 mx-1 mb-3 md:w-96 md:mx-auto">
             <div class="flex">
               <div class="mr-2 h-28 w-28">
                 <% if recipe.photo.attached? %>
@@ -40,7 +40,7 @@
       <% end %>
 
     <% else %>
-      <%= image_tag "cute-sushi-2.png", class:""%>
+      <%= image_tag "cute-sushi-2.png", class:"md:h-3/4 md:mx-auto"%>
 
       <h3 class="text-sm text-center"> Vous n'avez pas encore créer de recette.</h3>
 

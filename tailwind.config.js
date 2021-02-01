@@ -9,6 +9,12 @@ module.exports = {
       height: {
         '86': '23rem',
         '100': '28rem',
+        '104': '31rem',
+        '110': '38rem',
+      },
+      spacing: {
+        '108': '33.85rem',
+        '82': '21rem',
       },
       boxShadow: {
         'creme': '4px 4px 0 0 rgba(247, 244, 234, 1)',
