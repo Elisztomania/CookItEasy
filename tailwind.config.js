@@ -11,6 +11,7 @@ module.exports = {
         '100': '28rem',
         '104': '31rem',
         '110': '38rem',
+        '120': '42rem',
       },
       spacing: {
         '108': '33.85rem',
@@ -30,7 +31,10 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      backgroundColor: ['group-focus'],
+      backgroundColor: ['active'],
+    },
   },
   plugins: [],
 };

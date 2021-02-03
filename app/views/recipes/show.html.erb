@@ -24,11 +24,11 @@
   <% if current_user != nil %>
     <div class="absolute -top-3.5 right-2 rounded-full bg-creme h-10 w-10 flex items-center justify-center text-xl text-lila-deep">
       <% if @favorite %>
-        <%= link_to favorite_path(@favorite), method: :delete do %>
+        <%= link_to favorite_path(@favorite), method: :delete, remote: true do %>
           <i class="fas fa-heart"> </i>
         <% end %>
       <% else %>
-        <%= link_to recipe_favorites_path(@recipe), method: :post do %>
+        <%= link_to recipe_favorites_path(@recipe), method: :post, remote: true do %>
           <i class="far fa-heart"></i>
         <% end %>
       <% end %>

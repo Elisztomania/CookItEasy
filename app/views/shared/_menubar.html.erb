@@ -4,20 +4,20 @@
   <% end %>
 
   <%= link_to recipes_path do %>
-    <%= image_tag "books.png", class:"h-8 pr-6" %>
+    <%= image_tag "books.png", class:["h-8 pr-6", ("opacity-50" if request.path == recipes_path)] %>
   <% end %>
 
   <div class="bg-creme rounded-full h-20 w-20 -mt-4 flex items-center justify-center">
     <%= link_to new_recipe_path do %>
-      <%= image_tag "plus.png", class:"h-14" %>
+      <%= image_tag "plus.png", class:["h-14", ("opacity-50" if request.path == new_recipe_path)] %>
     <% end %>
   </div>
 
   <%= link_to my_recipes_path do %>
-    <%= image_tag "cookie.png", class:"h-8 pl-6 pr-6" %>
+    <%= image_tag "cookie.png", class:["h-8 pl-6 pr-6", ("opacity-50" if request.path == my_recipes_path)] %>
   <% end %>
 
   <%= link_to recipes_favorites_path do  %>
-    <%= image_tag "heart.png", class:"h-8" %>
+    <%= image_tag "heart.png", class:["h-8", ("opacity-50" if request.path == recipes_favorites_path)] %>
   <% end %>
 </div>

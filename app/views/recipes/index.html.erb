@@ -1,4 +1,4 @@
-<h2 class="text-center mb-3 lg:mb-4">📚 Trouvez la recette parfaite !</h2>
+<h2 class="text-center mb-3 md:mb-4 md:text-xl">📚 Trouvez la recette parfaite !</h2>
 
 <!-- Search bar -->
   <div class="text-center mb-3">
@@ -12,14 +12,14 @@
 <!-- Fin search bar -->
 
 <!-- Category buttons -->
-  <div class="text-center mb-4 md:mb-8">
+  <div class="text-center mb-4 md:mb-8 md:mt-4">
     <%= link_to 'EZPZ', recipes_path(category: 'EZPZ'), class:"px-2 py-1 rounded-full text-xxs border-solid border border-new-black mr-1" %>
     <%= link_to 'Classique', recipes_path(category: 'Classique'), class:"px-2 py-1 rounded-full text-xxs border-solid border border-new-black mr-1" %>
     <%= link_to 'Mastet chef', recipes_path(category: 'Master chef'), class:"px-2 py-1 rounded-full text-xxs border-solid border border-new-black mr-1" %>
     <%= link_to 'Dessert', recipes_path(category: 'Dessert'), class:"px-2 py-1 rounded-full text-xxs border-solid border border-new-black" %>
   </div>
 <!-- Cards recipies -->
-  <div class="h-86 overflow-scroll md:h-104 md:mb-5">
+  <div class="h-86 overflow-scroll md:h-110 md:mb-5">
     <%= render 'cards-recipes', recipes: @recipes %>
   </div>
 <!-- Fin cards -->
