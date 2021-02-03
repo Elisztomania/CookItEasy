@@ -1,22 +1,21 @@
 <nav class="mb-1">
-  <div class="mx-auto px-4 py-2 sm:px-6 lg:px-8">
+  <div class="mx-auto px-4 py-2 sm:px-6 md:px-8 md:mb-10">
     <div class="flex items-center justify-between ">
       <%= link_to root_path do %>
         <h1 class="text-2xl text-bold mt-1">CookItEasy</h1>
       <% end %>
 
 
-  <!-- Trying dropdown menu -->
+  <!-- Dropdown menu -->
       <div>
         <button id="menu" type="button" class="mt-2 flex text-lg text-new-black focus:outline-none" aria-haspopup="true">
-           <!--  <%= image_tag "naruto.png", class:"h-8 w-8"%> -->
             <i class="fas fa-bars"></i>
         </button>
       </div>
     </div>
   </div>
 
-<div class="origin-top-right absolute right-1 w-42 ">
+<div class="origin-top-right absolute right-4 w-42 ">
   <% if !user_signed_in? %>
     <div id="links" class="bg-creme block hidden rounded-md shadow-sm py-1 ring-1 ring-black ring-opacity-5">
       <%= link_to "Connexion", new_user_session_path, class: "block px-4 py-2 text-sm text-new-black hover:bg-gray-100" %>
