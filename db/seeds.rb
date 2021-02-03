@@ -55,9 +55,9 @@ puts 'Creating recipies...'
     Quantity.create(q: 2, mesure:"C à soupe", recipe: tarte_p, ingredient:ing4_tp)
 
     Step.create(description: "Coupez les pommes en fines tranches.", recipe: tarte_p)
-    Step.create(description: "Disposez la pâte dans un moule à tarte. Piquez là avec une fourchette.", recipe: tarte_p)
+    Step.create(description: "Disposez la pâte dans un moule à tarte. Piquez-la avec une fourchette.", recipe: tarte_p)
     Step.create(description: "Étalez la compote. Soupoudrez de cannelle, disposez les tranches de pommes en rosace puis rajoutez le sucre.", recipe: tarte_p)
-    Step.create(description: "Faites cuire 45 minutes environ dans un four préalablement préchauffé à 200°C.", recipe: tarte_p)
+    Step.create(description: "Faites cuire 45 minutes environ, dans un four préalablement chauffé à 200°C.", recipe: tarte_p)
 
   puts "Creating Tarte fromage frais et courgettes..."
     tarte_c = Recipe.create(title:'Tarte courgettes et StMoret', category:'EZPZ', cooking_time: 45, prep_time: 20, note: "Une tarte légère et rapide à faire! Idéale pour l'été.", user: user_admin)
@@ -78,9 +78,9 @@ puts 'Creating recipies...'
     Quantity.create(q: 2, mesure:"C à soupe", recipe: tarte_c, ingredient:ing4_tc)
 
     Step.create(description: "Coupez les courgettes en fines tranches.", recipe: tarte_c)
-    Step.create(description: "Disposez la pâte dans un moule à tarte. Piquez là avec une fourchette.", recipe: tarte_c)
+    Step.create(description: "Disposez la pâte dans un moule à tarte. Piquez-la avec une fourchette.", recipe: tarte_c)
     Step.create(description: "Étalez la mourtde puis le fromage frais. Disposez les rondelles de courgette. Salez et poivrez.", recipe: tarte_c)
-    Step.create(description: "Faites cuire 45 minutes environ dans un four préalablement préchauffé à 200°C.", recipe: tarte_c)
+    Step.create(description: "Faites cuire 45 minutes environ, dans un four préalablement chauffé à 200°C.", recipe: tarte_c)
 
   puts "Creating Chili Sin Carne..."
     chili = Recipe.create(title:'Chili sin carne', category:'EZPZ', cooking_time: 20, prep_time: 20, note: "Un chili végératien simple, ultra rapide, pas chers et réconfortant!", user: user_admin)
@@ -107,8 +107,8 @@ puts 'Creating recipies...'
     Quantity.create(q: 2, mesure:"Pincée(s)", recipe: chili, ingredient:ing6_chili)
 
     Step.create(description: "Faites cuire le riz.", recipe: chili)
-    Step.create(description: "Réutilisez la casserole du riz pour faire la sauce : faites revenir les haricots puis les pois chiche avec les épices.", recipe: chili)
-    Step.create(description: "Rajoutez la sauce tomate puis assaisonnez à votre convenance (sel, poivre, encore des épices...)", recipe: chili)
+    Step.create(description: "Réutilisez la casserole du riz pour faire la sauce : faites revenir les haricots puis les pois chiches avec les épices.", recipe: chili)
+    Step.create(description: "Rajoutez la sauce tomate puis assaisonnez à votre convenance (sel, poivre, encore des épices...).", recipe: chili)
     Step.create(description: "Mélangez le riz avec votre super sauce! Ajoutez le fromage et dégustez!", recipe: chili)
 
   puts "Creating Quiche poireaux féta..."
@@ -137,12 +137,12 @@ puts 'Creating recipies...'
 
     Step.create(description: "Faites préchauffer le four à 200°C.", recipe: quiche)
     Step.create(description: "Faites revenir l'échalotte avec les poireaux, préalablement coupés et lavés of course.", recipe: quiche)
-    Step.create(description: "Pendant ce temps... mélangez dans un cul de poule (ou autre type de saladier) les œufs et la crème. Assaisonnez à votre guise, sel, poivre et un peu de curry pour ma part ! Coupez ensuite la feta.", recipe: quiche)
-    Step.create(description: "Disposez dans un plat à tarte la pâte brisée et piquez là. Versez-y les poireaux cuits, parsemez les dés de feta préalablement découpés puis le mélange œufs/crème.", recipe: quiche)
-    Step.create(description: "Enfournez pour 45 minutes de cuisson (voir plus selon votre four).", recipe: quiche)
+    Step.create(description: "Pendant ce temps... mélangez dans un cul de poule (ou autre type de saladier) les œufs et la crème. Assaisonnez à votre guise, sel, poivre et un peu de curry (conseil du chef) !", recipe: quiche)
+    Step.create(description: "Disposez, dans un plat à tarte, la pâte brisée et piquez-la. Versez-y les poireaux cuits, parsemez les dés de feta préalablement découpés puis le mélange œufs/crème.", recipe: quiche)
+    Step.create(description: "Enfournez pour 45 minutes de cuisson (plus au moins ça dépend de votre four).", recipe: quiche)
 
   puts "Creating Gratin butternut..."
-    gratin_b = Recipe.create(title:'Gratin de butternut', category:'Classique', cooking_time: 30, prep_time: 20, note: "Une recette qui change un peu mais c'est vraiment pas mal, je recommande. N'hésitez pas à rajouter du fromage 😉", user: user_admin)
+    gratin_b = Recipe.create(title:'Gratin de butternut', category:'Classique', cooking_time: 30, prep_time: 20, note: "Une recette qui change un peu mais c'est vraiment pas mal, je recommande. N'hésitez pas à rajouter du fromage!", user: user_admin)
     source = File.open("app/assets/images/butternut.jpg")
     gratin_b.photo.attach(io: source, filename: 'butternut.jpg', content_type: 'image/jpg')
     gratin_b.save!
@@ -168,16 +168,16 @@ puts 'Creating recipies...'
     ing7_gratinb = Ingredient.create(name: "ail en poudre")
     Quantity.create(q: 1, mesure:"Pincée(s)", recipe: gratin_b, ingredient:ing7_gratinb)
 
-    Step.create!(description: "Epluchez votre butternut, videz-le et coupez le en petits morceaux. Faites-les cuire dans une poêle avec ½ verre d’eau pendant 10/15 minutes. Ils ne doivent pas être trop cuits mais fermes.", recipe: gratin_b)
-    Step.create!(description:"Pendant ce temps épluchez les champignons, coupez-les et faites les cuire dan 1 c à soupe d’huile.", recipe: gratin_b)
+    Step.create!(description: "Epluchez votre butternut, videz-le et coupez-le en petits morceaux. Faites-les cuire dans une poêle avec ½ verre d’eau pendant 10/15 minutes. Ils ne doivent pas être trop cuits mais fermes.", recipe: gratin_b)
+    Step.create!(description:"Pendant ce temps épluchez les champignons, coupez-les et faites-les cuire dan 1 c à soupe d’huile.", recipe: gratin_b)
     Step.create!(description: "Dans un saladier, mélangez les œufs avec le yaourt, le sel, le poivre et l’ail en poudre. Mélangez bien.", recipe: gratin_b)
-    Step.create!(description: "Dans un plat à gratin, mettez la moitié du butternut au fond, ajoutez les champignons par le dessus puis ensuite le jambon.", recipe: gratin_b)
+    Step.create!(description: "Dans un plat à gratin, mettez la moitié du butternut au fond, ajoutez-les champignons par le dessus puis ensuite le jambon.", recipe: gratin_b)
     Step.create!(description: "Versez la moitié du mélange œufs/yaourt.", recipe: gratin_b)
-    Step.create!(description: "Ajoutez l’autre moitié du butternut sur le dessus, versez le reste de la préparation. Ajoutez le gruyère râpé.", recipe: gratin_b)
+    Step.create!(description: "Ajoutez l’autre moitié du butternut sur le dessus, versez le reste de la préparation. Ajoutez-le gruyère râpé.", recipe: gratin_b)
     Step.create!(description: "Enfournez le gratin pendant 25 à 30 minutes à 180°C.", recipe: gratin_b)
 
   puts "Creating Bric chèvre épinards..."
-    bric = Recipe.create(title:'Bric chèvre épinards', category:'EZPZ', cooking_time: 20, prep_time: 10, note: "Une recette originale de Maëlys. Vous pouvez aussi mettre de la mache à la place des épinards.", user: user_admin)
+    bric = Recipe.create(title:'Bric chèvre épinards', category:'EZPZ', cooking_time: 20, prep_time: 10, note: "Une recette originale de Maëlys. Vous pouvez aussi mettre de la mâche à la place des épinards. Pour 10 portions.", user: user_admin)
     source = File.open("app/assets/images/bric.jpg")
     bric.photo.attach(io: source, filename: 'bric.jpg', content_type: 'image/jpg')
     bric.save!
@@ -195,9 +195,9 @@ puts 'Creating recipies...'
     Quantity.create(q: 1, mesure:"Pincée(s)", recipe: bric, ingredient:ing4_bric)
 
     Step.create(description:"Préchauffez le four à 200°C.", recipe: bric)
-    Step.create(description:"Faites décongelés les épinards puis assaisonnez-les avec de l'huile, sel, poivre et l'ail en poudre.", recipe: bric)
+    Step.create(description:"Faites décongeler les épinards puis assaisonnez-les avec de l'huile, du sel, du poivre et de l'ail en poudre.", recipe: bric)
     Step.create(description:"Découpez des petits dés de chèvre.", recipe: bric)
-    Step.create!(description:"Coupez les feuilles de bric en deux. Disposez une cuillières à soupe d'épinards ainsi que quelques dés de chèvre dans un angle.", recipe: bric)
+    Step.create!(description:"Coupez les feuilles de bric en deux. Disposez une cuillière à soupe d'épinards ainsi que quelques dés de chèvre dans un angle.", recipe: bric)
     Step.create!(description:"Pliez la feuille en triangle, tel un samosa. Regardez un tuto pour le pliage, c'est impossible d'expliquer là.", recipe: bric)
     Step.create(description:"Enfournez jusqu'à ce que ce soit bien doré!", recipe: bric)
 
@@ -220,10 +220,10 @@ puts 'Creating recipies...'
     Quantity.create(q: 75, mesure:"g", recipe: grating, ingredient:ing4_grating)
 
     Step.create(description:"Préchauffez le four à 200°C.", recipe: grating)
-    Step.create(description:"Faites cuire les gnocchis dans de l'eau bouillante salée. Une fois cuits ils remontent à la surface.", recipe: grating)
+    Step.create(description:"Faites cuire les gnocchis dans de l'eau bouillante salée. Une fois cuits, ils remontent à la surface.", recipe: grating)
     Step.create(description:"Disposez les gnocchis cuits dans un plat à gratin, ajoutez le jambon puis versez la crème.", recipe: grating)
-    Step.create(description:"Assaisonnez : sel, poivre et perso un peu de curry. Mélangez le tout. Ajoutez le fromage rapé on top!", recipe: grating)
-    Step.create(description:"Enfounez 30 à 45 minutes selon votre convenance.", recipe: grating)
+    Step.create(description:"Assaisonnez : sel, poivre et un peu de curry (comme d'hab curry partout). Mélangez le tout. Ajoutez le fromage rapé on top!", recipe: grating)
+    Step.create(description:"Enfounez 30 à 45 minutes, selon votre convenance et votre four.", recipe: grating)
 
   puts "Creating Cookies..."
     cookies = Recipe.create(title:'Cookies', category:'Dessert', cooking_time: 15, prep_time: 15, note: "Recette de base à pimper avec ce que vous aimez : noix, M&MS, 3 choco...", user: user_admin)
@@ -329,11 +329,12 @@ puts 'Creating recipies...'
     Step.create(description:"Battre l'œuf avec le sucre.", recipe: pancakes)
     Step.create(description:"Rajoutez l'huile.", recipe: pancakes)
     Step.create(description:"Ajoutez progressivement la farine et la levure au mélange précédent.", recipe: pancakes)
-    Step.create(description:"Délayez progressivement avec le lait.", recipe: pancakes)
-    Step.create(description:"Disposez une cuillière à soupe de la pâte sur une poêle bien chaude. Retournez le pancake quand des bulles apparaissent. Laissez cuire 1 à 2 min supplémentaire.", recipe: pancakes)
+    Step.create(description:"Délayez avec le lait.", recipe: pancakes)
+    Step.create(description:"Disposez une louchette de pâte sur une poêle bien chaude. Retournez le pancake quand des bulles apparaissent. Laissez cuire 1 à 2 min supplémentaire.", recipe: pancakes)
+    Step.create(description:"Toujours finir la pâte en faisant un pancake en forme de cœur.", recipe: pancakes)
 
   puts "Creating Caké salé..."
-    cake_sale = Recipe.create(title:'Cake salé jambon & olive', category:'Classique', cooking_time: 45, prep_time: 15, note: "Tellement bon et hyper simple : vous pouvez rajouter d'autres ingrédients en fonction des vos gôuts.", user: user_admin)
+    cake_sale = Recipe.create(title:'Cake salé jambon & olive', category:'Classique', cooking_time: 45, prep_time: 15, note: "Idéal pour un apéro dinatoire : vous pouvez rajouter d'autres ingrédients en fonction des vos gôuts.", user: user_admin)
     source = File.open("app/assets/images/cake-sale.jpeg")
     cake_sale.photo.attach(io: source, filename: 'cake-sale.jpeg', content_type: 'image/jpeg')
     cake_sale.save!
@@ -364,7 +365,7 @@ puts 'Creating recipies...'
 
     Step.create(description:"Préchauffez le four à 180°C.", recipe: cake_sale)
     Step.create(description:"Versez les œufs dans un puit de farine et mélangez progressivement.", recipe: cake_sale)
-    Step.create(description:"Ajoutez le lait, l'huile, le jambon, les olives coupées en rondelles et la levures.", recipe: cake_sale)
+    Step.create(description:"Ajoutez le lait, l'huile, le jambon, les olives coupées en rondelles et la levure.", recipe: cake_sale)
     Step.create(description:"Versez la pâte dans un moule à cake.", recipe: cake_sale)
     Step.create(description:"Enfournez pour 45 minutes.", recipe: cake_sale)
 
@@ -397,6 +398,38 @@ puts 'Creating recipies...'
     Step.create(description:"Faites fondre le chocolat et le beurre. Puis ajoutez le mélange au mélange précédent.", recipe: chocolate_cake)
     Step.create(description:"Ajoutez la farine, la levure et une pointe de sel.", recipe: chocolate_cake)
     Step.create(description:"Enfournez pour 25 minutes.", recipe: chocolate_cake)
+
+  puts "Creating Croziflette..."
+    croziflette = Recipe.create(title:'Croziflette', category:'Master chef', cooking_time: 20, prep_time: 10, note: "Recette officielle de Alpina (la marque des Crozets). Pour 10 personnes.", user: user_admin)
+    source = File.open("app/assets/images/croziflette.png")
+    croziflette.photo.attach(io: source, filename: 'croziflette.png', content_type: 'image/png')
+    croziflette.save!
+
+    ing1_crozi = Ingredient.create(name: "crozets nature")
+    Quantity.create(q: 400, mesure:"g", recipe: croziflette, ingredient:ing1_crozi)
+
+    ing2_crozi = Ingredient.create(name: "crozets sarrasin")
+    Quantity.create(q: 200, mesure:"g", recipe: croziflette, ingredient:ing2_crozi)
+
+    ing3_crozi = Ingredient.create(name: "lardons")
+    Quantity.create(q: 500, mesure:"g", recipe: croziflette, ingredient:ing3_crozi)
+
+    ing4_crozi = Ingredient.create(name: "reblochon")
+    Quantity.create(q: 700, mesure:"g", recipe: croziflette, ingredient:ing4_crozi)
+
+    ing5_crozi = Ingredient.create(name: "crème fraîche")
+    Quantity.create(q: 1, mesure:"L", recipe: croziflette, ingredient:ing5_crozi)
+
+    ing6_crozi = Ingredient.create(name: "oignons")
+    Quantity.create(q: 2, mesure:"(rien)", recipe: croziflette, ingredient:ing6_crozi)
+
+    Step.create(description:"Préchauffez le four à 180°C.", recipe: croziflette)
+    Step.create(description:"Cuire les Crozets 15 min à l’eau bouillante salée (10 fois le volume de Crozets).", recipe: croziflette)
+    Step.create(description:"Emincez les oignons et faites-les revenir. Rajoutez les lardons.", recipe: croziflette)
+    Step.create(description:"Dans un grand plat à gratin, mélangez les Crozets avec la crème fraiche ainsi que le mélange lardons/oignons.", recipe: croziflette)
+    Step.create(description:"Disposez le reblochon coupé en deux sur le dessus.", recipe: croziflette)
+    Step.create(description:"Faites gratiner 5 à 10min.", recipe: croziflette)
+    Step.create(description:"Servir accompagné d'une salade pour une touche de fraîcheur! Enjoy ❤️", recipe: croziflette)
 
 puts 'Finished!'
 
