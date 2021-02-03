@@ -7,9 +7,9 @@
 
       <%= simple_form_for [@recipe, @quantity], remote: true do |f| %>
             <div class="">
-              <%= f.input_field :q, placeholder: "Quantité", class: 'rounded-full w-32 py-2 px-4 italic text-sm mb-4 mr-4' %>
+              <%= f.input_field :q, placeholder: "Quantité (ex: 10)", class: 'rounded-full w-32 py-2 px-4 italic text-sm mb-4 mr-4' %>
               <%= f.input_field :mesure, collection: Quantity::MESURE, prompt: "Mesure", class: 'rounded-full w-36 py-2 px-4 italic text-sm mb-3' %>
-              <%= f.input_field :ingredient, placeholder: "Nom de l'ingredient", class: 'rounded-full w-60 py-2 px-4 italic text-sm mb-4 mr-2' %>
+              <%= f.input_field :ingredient, placeholder: "Nom de l'ingredient (ex: sucre)", class: 'rounded-full w-60 py-2 px-4 italic text-sm mb-4 mr-2' %>
 
               <%= button_tag type:'submit', class:'rounded-full bg-new-black text-lila-deep h-9 w-9 text-center' do %>
                 <i class="fas fa-plus-circle"></i>

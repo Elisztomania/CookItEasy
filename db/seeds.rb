@@ -55,9 +55,9 @@ puts 'Creating recipies...'
     Quantity.create(q: 2, mesure:"C à soupe", recipe: tarte_p, ingredient:ing4_tp)
 
     Step.create(description: "Coupez les pommes en fines tranches.", recipe: tarte_p)
-    Step.create(description: "Disposez la pâte dans un moule à tarte. Piquez là avec une fourchette.", recipe: tarte_p)
+    Step.create(description: "Disposez la pâte dans un moule à tarte. Piquez-la avec une fourchette.", recipe: tarte_p)
     Step.create(description: "Étalez la compote. Soupoudrez de cannelle, disposez les tranches de pommes en rosace puis rajoutez le sucre.", recipe: tarte_p)
-    Step.create(description: "Faites cuire 45 minutes environ dans un four préalablement préchauffé à 200°C.", recipe: tarte_p)
+    Step.create(description: "Faites cuire 45 minutes environ, dans un four préalablement chauffé à 200°C.", recipe: tarte_p)
 
   puts "Creating Tarte fromage frais et courgettes..."
     tarte_c = Recipe.create(title:'Tarte courgettes et StMoret', category:'EZPZ', cooking_time: 45, prep_time: 20, note: "Une tarte légère et rapide à faire! Idéale pour l'été.", user: user_admin)
@@ -78,9 +78,9 @@ puts 'Creating recipies...'
     Quantity.create(q: 2, mesure:"C à soupe", recipe: tarte_c, ingredient:ing4_tc)
 
     Step.create(description: "Coupez les courgettes en fines tranches.", recipe: tarte_c)
-    Step.create(description: "Disposez la pâte dans un moule à tarte. Piquez là avec une fourchette.", recipe: tarte_c)
+    Step.create(description: "Disposez la pâte dans un moule à tarte. Piquez-la avec une fourchette.", recipe: tarte_c)
     Step.create(description: "Étalez la mourtde puis le fromage frais. Disposez les rondelles de courgette. Salez et poivrez.", recipe: tarte_c)
-    Step.create(description: "Faites cuire 45 minutes environ dans un four préalablement préchauffé à 200°C.", recipe: tarte_c)
+    Step.create(description: "Faites cuire 45 minutes environ, dans un four préalablement chauffé à 200°C.", recipe: tarte_c)
 
   puts "Creating Chili Sin Carne..."
     chili = Recipe.create(title:'Chili sin carne', category:'EZPZ', cooking_time: 20, prep_time: 20, note: "Un chili végératien simple, ultra rapide, pas chers et réconfortant!", user: user_admin)
@@ -107,8 +107,8 @@ puts 'Creating recipies...'
     Quantity.create(q: 2, mesure:"Pincée(s)", recipe: chili, ingredient:ing6_chili)
 
     Step.create(description: "Faites cuire le riz.", recipe: chili)
-    Step.create(description: "Réutilisez la casserole du riz pour faire la sauce : faites revenir les haricots puis les pois chiche avec les épices.", recipe: chili)
-    Step.create(description: "Rajoutez la sauce tomate puis assaisonnez à votre convenance (sel, poivre, encore des épices...)", recipe: chili)
+    Step.create(description: "Réutilisez la casserole du riz pour faire la sauce : faites revenir les haricots puis les pois chiches avec les épices.", recipe: chili)
+    Step.create(description: "Rajoutez la sauce tomate puis assaisonnez à votre convenance (sel, poivre, encore des épices...).", recipe: chili)
     Step.create(description: "Mélangez le riz avec votre super sauce! Ajoutez le fromage et dégustez!", recipe: chili)
 
   puts "Creating Quiche poireaux féta..."
