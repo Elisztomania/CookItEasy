@@ -19,13 +19,25 @@
       width: 100vw;
     }
 
-    a.title {
-      font-family: 'Libre Franklin', sans-serif;
+    a.underlined {
       color: #161925;
       text-decoration: none;
-      margin-bottom: 5px;
       display: inline-block;
-      padding-bottom: 1px;
+      padding-bottom: 0px;
+      border-bottom: 1px solid #161925;
+    }
+
+    a.logo {
+      color: #161925;
+      text-decoration: none;
+      display: inline-block;
+      padding-bottom: 0px;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+      font-style: italic;
     }
 
     main {
@@ -36,31 +48,66 @@
       align-items: center;
     }
 
+    .navbar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60px;
+      flex-shrink: 0;
+      margin-left: 10px;
+    }
+
+    .content {
+      margin: 3px;
+    }
+
     h1 {
       font-family: 'Libre Franklin', sans-serif;
-      margin-bottom: 20px;
-      font-weight: 100;
+      font-size: 100px;
       font-weight: bold;
+      font-style: italic;
+      margin: 0;
     }
 
     h2 {
       font-family: 'Libre Franklin', sans-serif;
       margin-bottom: 20px;
-      margin-top: 50px;
-      font-weight: 80;
+      font-size: 30;
+    }
+
+    @media (min-width: 1024px) {
+      body {
+        text-align: center;
+      }
     }
 
   </style>
 </head>
 
   <body>
-    <!-- This file lives in public/404.html -->
+
+    <div class="navbar">
+        <a class="logo" href="/">CookItEasy</a>
+    </div>
+
     <main>
-      <div class="px-10">
-        <a href="/"><h1>CookItEasy</h1></a>
+
+      <div class="content">
+        <h1>404</h1>
         <h2>Cette page n'existe pas.</h2>
-        <p>À la place, nous t'invitons à découvrir toutes les <a href="/recipies"> recettes</a>.</p>
+        <p>À la place, nous t'invitons à découvrir toutes les <a class="underlined" href="/recipies"> recettes</a>.</p>
+        <p>Sinon tu peux aller me follow sur IG <a class="underlined "href="https://www.instagram.com/elisztomania/">@Elisztomnia</a> ✌️ </p>
       </div>
+
     </main>
   </body>
 </html>
+
+
+
+
+
+
+
+
+
