@@ -10,7 +10,7 @@ class Recipe < ApplicationRecord
 
   validates :title, presence: true, length: { maximum: 30 }
   validates :category, presence: true, inclusion: { in: CAT }
-  validates :cooking_time, presence: true
-  validates :prep_time, presence: true
+  validates :cooking_time, presence: true, numericality: { greater_than: 0 }
+  validates :prep_time, presence: true, numericality: { greater_than: 0 }
   validates :note, presence: true
 end

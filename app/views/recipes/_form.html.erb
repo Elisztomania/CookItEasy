@@ -1,6 +1,7 @@
 <div class="bg-lila-deep p-2 rounded-md shadow-creme mb-4">
 
     <div class="mx-4 my-4">
+
       <%= simple_form_for @recipe do |f| %>
 
         <div class="mb-1 px-2 font-semibold text-sm"><%= f.label :title, "Titre de la recette*" %></div>
@@ -27,6 +28,15 @@
           <div class="text-right text-xs mt-5"><%= f.button :submit, 'Mettre à jour', class:'rounded-full bg-new-black text-lila-deep px-4 py-2'  %></div>
         <% end %>
       <% end %>
+
+        <% if @recipe.errors.any? %>
+          <% @recipe.errors.full_messages.each do |message|%>
+            <div class="bg-creme p-2 rounded-md mt-3 shadow-md flex">
+              <i class="fas fa-exclamation-circle text-new-black text-xs"></i> <p class="text-xs italic ml-1"> <%= message %> </p>
+            </div>
+          <% end %>
+        <% end %>
+
     </div>
 
 
