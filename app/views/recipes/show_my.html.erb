@@ -40,12 +40,12 @@
       <% end %>
 
     <% else %>
-      <%= image_tag "cute-sushi-2.png", class:"md:h-3/4 md:mx-auto"%>
+      <%= image_tag "cute-sushi-2.png", class:"h-3/4 mx-auto"%>
 
       <h3 class="text-sm text-center"> Vous n'avez pas encore créer de recette.</h3>
 
       <div class="mt-4 text-center">
-        <%= link_to "Ajouter la votre", new_recipe_path, class:"px-4 py-2 rounded-full font-semibold text-xs bg-lila-deep"  %>
+        <%= link_to "Ajoutez la votre", new_recipe_path, class:"px-4 py-2 rounded-full font-semibold text-xs bg-lila-deep"  %>
       </div>
 
     <% end %>
