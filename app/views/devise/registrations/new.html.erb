@@ -1,21 +1,29 @@
 <div class="bg-lila-deep py-6 px-6 rounded-md shadow-creme mt-5">
   <h2 class="text-base text-center mb-5 ">🔥  Se créer un compte</h2>
 
-          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-            <%= f.error_notification %>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
 
 
-              <%= f.input_field :username, placeholder:"Username", required: true, autofocus: true, class:"text-sm rounded-full w-full italic py-1 px-4 mb-6" %>
+        <%= f.input_field :username, placeholder:"Username", required: true, autofocus: true, class:"text-sm rounded-full w-full italic py-1 px-4 mb-6" %>
 
-              <%= f.input_field :email, placeholder:"Email", required: true, class:"text-sm rounded-full w-full italic py-1 px-4 mb-6" %>
-              <%= f.input_field :password, placeholder:"Mot de passe", required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), class:"text-sm rounded-full w-full italic py-1 px-4 mb-6" %>
+        <%= f.input_field :email, placeholder:"Email", required: true, class:"text-sm rounded-full w-full italic py-1 px-4 mb-6" %>
+        <%= f.input_field :password, placeholder:"Mot de passe", required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), class:"text-sm rounded-full w-full italic py-1 px-4 mb-6" %>
 
-              <%= f.input_field :password_confirmation, placeholder:"Confirmation du mot de passe", required: true, class:"text-sm rounded-full w-full italic py-1 px-4" %>
+        <%= f.input_field :password_confirmation, placeholder:"Confirmation du mot de passe", required: true, class:"text-sm rounded-full w-full italic py-1 px-4" %>
 
-            <div class="text-center mt-6">
-              <%= f.button :submit, "Créer un compte", class:"text-sm rounded-full bg-new-black text-lila-deep px-4 py-2 mb-2" %>
-            </div>
-          <% end %>
+      <div class="text-center mt-6">
+        <%= f.button :submit, "Créer un compte", class:"text-sm rounded-full bg-new-black text-lila-deep px-4 py-2 mb-2" %>
+      </div>
+    <% end %>
+
+    <% if @user.errors.any? %>
+      <% @user.errors.full_messages.each do |message|%>
+        <div class="bg-creme p-2 rounded-md mt-3 shadow-md flex">
+          <i class="fas fa-exclamation-circle text-new-black text-xs"></i> <p class="text-xs italic ml-1"> <%= message %> </p>
+        </div>
+      <% end %>
+    <% end %>
 </div>
 
 
