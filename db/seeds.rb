@@ -431,6 +431,43 @@ puts 'Creating recipies...'
     Step.create(description:"Faites gratiner 5 à 10min.", recipe: croziflette)
     Step.create(description:"Servir accompagné d'une salade pour une touche de fraîcheur! Enjoy ❤️", recipe: croziflette)
 
+  puts "Creating Risotto..."
+    risotto = Recipe.create(title:'Risotto poireaux champignons', category:'Master chef', cooking_time: 30, prep_time: 10, note: "Tellement bon et gourmand. Quantités pour 2 personnes.", user: user_admin)
+    source = File.open("app/assets/images/risotto.jpg")
+    risotto.photo.attach(io: source, filename: 'risotto.jpg', content_type: 'image/jpg')
+    risotto.save!
+
+    ing1_riso = Ingredient.create(name: "riz à risotto")
+    Quantity.create(q: 125, mesure:"g", recipe: risotto, ingredient:ing1_riso)
+
+    ing2_riso = Ingredient.create(name: "champignons de Paris")
+    Quantity.create(q: 150, mesure:"g", recipe: risotto, ingredient:ing2_riso)
+
+    ing3_riso = Ingredient.create(name: "poireaux")
+    Quantity.create(q: 1, mesure:"(rien)", recipe: risotto, ingredient:ing3_riso)
+
+    ing4_riso = Ingredient.create(name: "cube bouillon de légumes")
+    Quantity.create(q: 1, mesure:"(rien)", recipe: risotto, ingredient:ing4_riso)
+
+    ing5_riso = Ingredient.create(name: "oignon")
+    Quantity.create(q: 0.5, mesure:"(rien)", recipe: risotto, ingredient:ing5_riso)
+
+    ing6_riso = Ingredient.create(name: "vin blanc")
+    Quantity.create(q: 5, mesure:"Cl", recipe: risotto, ingredient:ing6_riso)
+
+    ing7_riso = Ingredient.create(name: "crème fraîche")
+    Quantity.create(q: 7.5, mesure:"Cl", recipe: risotto, ingredient:ing7_riso)
+
+    ing8_riso = Ingredient.create(name: "parmesan")
+    Quantity.create(q: 50, mesure:"g", recipe: risotto, ingredient:ing8_riso)
+
+    Step.create(description:"Faites cuire les poireaux, coupés en rondelles. Ajoutez les champignons, coupés en morceaux, avec une cuillière à soupe de vin blanc. Ajoutez la crème frâiche, une fois le tout cuits. Réservez.", recipe: risotto)
+    Step.create(description:"Faites bouillir un demi litre d'eau dans lequel vous diluerez le cube de bouillon.", recipe: risotto)
+    Step.create(description:"Dans une sauteuse, faites chauffer l'huile d'olive pour y faire blondir l'oignon émincé. Ajoutez le riz et laissez-le cuire en remuant pendant 2 minutes jusqu'à ce qu'il soit un peu transparent.", recipe: risotto)
+    Step.create(description:"Ajoutez le reste de vin blanc et une fois qu'il est absorbé par le riz, ajoutez une louche de bouillon, puis mélangez. Une fois que le bouillon est bien absorbé, ajoutez une nouvelle louche, et ainsi de suite jusqu'à épuisement du bouillon (environ 20 bonnes minutes).", recipe: risotto)
+    Step.create(description:"Ajoutez le mélange poireaux/champignons/crème au riz puis ajoutez le parmesan.", recipe: risotto)
+    Step.create(description:"Dégustez bien chaud.", recipe: risotto)
+
 puts 'Finished!'
 
 
