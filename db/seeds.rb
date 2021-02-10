@@ -468,6 +468,43 @@ puts 'Creating recipies...'
     Step.create(description:"Ajoutez le mélange poireaux/champignons/crème au riz puis ajoutez le parmesan.", recipe: risotto)
     Step.create(description:"Dégustez bien chaud.", recipe: risotto)
 
+  puts "Creating Madeleines..."
+    madeleines = Recipe.create(title:'Madeleines au miel', category:'Dessert', cooking_time: 5, prep_time: 10, note: "Les madeleines de mon enfance! Hyper facile à faire.", user: user_admin)
+    source = File.open("app/assets/images/madeleines.jpg")
+    madeleines.photo.attach(io: source, filename: 'madeleines.jpg', content_type: 'image/jpg')
+    madeleines.save!
+
+    ing1_mad = Ingredient.create(name: "œufs")
+    Quantity.create(q: 2, mesure:"(rien)", recipe: madeleines, ingredient:ing1_mad)
+
+    ing2_mad = Ingredient.create(name: "miel")
+    Quantity.create(q: 10, mesure:"g", recipe: madeleines, ingredient:ing2_mad)
+
+    ing3_mad = Ingredient.create(name: "farine")
+    Quantity.create(q: 90, mesure:"g", recipe: madeleines, ingredient:ing3_mad)
+
+    ing4_mad = Ingredient.create(name: "cassonade")
+    Quantity.create(q: 10, mesure:"g", recipe: madeleines, ingredient:ing4_mad)
+
+    ing5_mad = Ingredient.create(name: "beurre fondu")
+    Quantity.create(q: 90, mesure:"g", recipe: madeleines, ingredient:ing5_mad)
+
+    ing6_mad = Ingredient.create(name: "sucre")
+    Quantity.create(q: 75, mesure:"g", recipe: madeleines, ingredient:ing6_mad)
+
+    ing7_mad = Ingredient.create(name: "levure")
+    Quantity.create(q: 0.5, mesure:"C à café", recipe: madeleines, ingredient:ing7_mad)
+
+    ing8_mad = Ingredient.create(name: "sel")
+    Quantity.create(q: 1, mesure:"Pincée(s)", recipe: madeleines, ingredient:ing8_mad)
+
+    Step.create(description:"Mélangez ensemble le sucre, la cassonade, le sel, les œufs entiers dans une jatte (j'utilise les mots de le recette d'origine.", recipe: madeleines)
+    Step.create(description:"Puis ajoutez, la farine, le beurre fondu et refroidi, le miel et la levure.", recipe: madeleines)
+    Step.create(description:"Mélangez et mettre au frais pendant une demi-heure.", recipe: madeleines)
+    Step.create(description:"Beurrez les moules avec une douille de pâtissier ou à défaut à la cuillière.", recipe: madeleines)
+    Step.create(description:"Mettre à four chaud à 180°C pendant 5 minutes.", recipe: madeleines)
+
+
 puts 'Finished!'
 
 
