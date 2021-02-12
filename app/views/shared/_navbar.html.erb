@@ -15,18 +15,17 @@
     </div>
   </div>
 
-<div class="origin-top-right absolute right-4 w-42 ">
-  <% if !user_signed_in? %>
-    <div id="links" class="bg-creme block hidden rounded-md shadow-sm py-1 ring-1 ring-black ring-opacity-5">
-      <%= link_to "Connexion", new_user_session_path, class: "block px-4 py-2 text-sm text-new-black hover:bg-gray-100" %>
-      <%= link_to "Se créer un compte", new_user_registration_path, class: "block px-4 py-2 text-sm text-new-blakc hover:bg-gray-100" %>
-    </div>
+  <div class="origin-top-right absolute right-4 w-42 ">
+    <% if !user_signed_in? %>
+      <div id="links" class="bg-creme block hidden rounded-md shadow-sm py-1 ring-1 ring-black ring-opacity-5">
+        <%= link_to "Connexion", new_user_session_path, class: "block px-4 py-2 text-sm text-new-black hover:bg-gray-100" %>
+        <%= link_to "Se créer un compte", new_user_registration_path, class: "block px-4 py-2 text-sm text-new-blakc hover:bg-gray-100" %>
+      </div>
 
-  <% else %>
-    <div id="links" class="bg-creme block hidden rounded-md shadow-sm py-1 ring-1 ring-black ring-opacity-5">
-      <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "block px-4 py-2 text-sm text-new-black hover:bg-gray-100" %>
-    </div>
-  <% end %>
-</div>
-
+    <% else %>
+      <div id="links" class="bg-creme block hidden rounded-md shadow-sm py-1 ring-1 ring-black ring-opacity-5">
+        <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "block px-4 py-2 text-sm text-new-black hover:bg-gray-100" %>
+      </div>
+    <% end %>
+  </div>
 </nav>
