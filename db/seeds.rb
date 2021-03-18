@@ -19,13 +19,13 @@ puts 'Creating recipies...'
     palmiers.save!
 
     ing1_p = Ingredient.create(name: "pâte feuilletée")
-    Quantity.create!(q: 1, mesure:"(rien)", recipe: palmiers, ingredient:ing1_p)
+    Quantity.create!(q: "1", mesure:"(rien)", recipe: palmiers, ingredient:ing1_p)
 
     ing2_p = Ingredient.create(name: "sucre roux")
-    Quantity.create(q: 30, mesure: "g", recipe: palmiers, ingredient: ing2_p)
+    Quantity.create(q: "30", mesure: "g", recipe: palmiers, ingredient: ing2_p)
 
     ing3_p = Ingredient.create(name: "cannelle")
-    Quantity.create(q: 10, mesure: "g", recipe: palmiers, ingredient: ing3_p)
+    Quantity.create(q: "10", mesure: "g", recipe: palmiers, ingredient: ing3_p)
 
     Step.create(description: "Étalez la pâte feuilletée et repartissez le sucre puis la cannelle.", recipe: palmiers)
     Step.create(description: "Roulez les bords l'un vers l'autre, pour former les deux côtés du palmier. Pressez légèrement pour coller les surfaces de pâte les unes aux autres.", recipe: palmiers)
@@ -40,19 +40,19 @@ puts 'Creating recipies...'
     tarte_p.save!
 
     ing1_tp = Ingredient.create(name: "pâte brisée")
-    Quantity.create(q: 1, mesure:"(rien)", recipe: tarte_p, ingredient:ing1_tp)
+    Quantity.create(q: "1", mesure:"(rien)", recipe: tarte_p, ingredient:ing1_tp)
 
     ing2_tp = Ingredient.create(name: "compotes de pommes")
-    Quantity.create(q: 2, mesure:"(rien)", recipe: tarte_p, ingredient:ing2_tp)
+    Quantity.create(q: "2", mesure:"(rien)", recipe: tarte_p, ingredient:ing2_tp)
 
     ing3_tp = Ingredient.create(name: "pommes")
-    Quantity.create(q: 4, mesure:"(rien)", recipe: tarte_p, ingredient:ing3_tp)
+    Quantity.create(q: "4", mesure:"(rien)", recipe: tarte_p, ingredient:ing3_tp)
 
     ing4_tp = Ingredient.create(name: "cannelle")
-    Quantity.create(q: 1, mesure:"C à café", recipe: tarte_p, ingredient:ing4_tp)
+    Quantity.create(q: "1", mesure:"C à café", recipe: tarte_p, ingredient:ing4_tp)
 
     ing4_tp = Ingredient.create(name: "sucre roux")
-    Quantity.create(q: 2, mesure:"C à soupe", recipe: tarte_p, ingredient:ing4_tp)
+    Quantity.create(q: "2", mesure:"C à soupe", recipe: tarte_p, ingredient:ing4_tp)
 
     Step.create(description: "Coupez les pommes en fines tranches.", recipe: tarte_p)
     Step.create(description: "Disposez la pâte dans un moule à tarte. Piquez-la avec une fourchette.", recipe: tarte_p)
@@ -66,16 +66,16 @@ puts 'Creating recipies...'
     tarte_c.save!
 
     ing1_tc = Ingredient.create(name: "pâte brisée")
-    Quantity.create(q: 1, mesure:"(rien)", recipe: tarte_c, ingredient:ing1_tc)
+    Quantity.create(q: "1", mesure:"(rien)", recipe: tarte_c, ingredient:ing1_tc)
 
     ing3_tc = Ingredient.create(name: "courgettes")
-    Quantity.create(q: 3, mesure:"(rien)", recipe: tarte_c, ingredient:ing3_tc)
+    Quantity.create(q: "3", mesure:"(rien)", recipe: tarte_c, ingredient:ing3_tc)
 
     ing2_tc = Ingredient.create(name: "fromage frais type St-Moret")
-    Quantity.create(q: 5, mesure:"C à soupe", recipe: tarte_c, ingredient:ing2_tc)
+    Quantity.create(q: "5", mesure:"C à soupe", recipe: tarte_c, ingredient:ing2_tc)
 
     ing4_tc = Ingredient.create(name: "moutarde")
-    Quantity.create(q: 2, mesure:"C à soupe", recipe: tarte_c, ingredient:ing4_tc)
+    Quantity.create(q: "2", mesure:"C à soupe", recipe: tarte_c, ingredient:ing4_tc)
 
     Step.create(description: "Coupez les courgettes en fines tranches.", recipe: tarte_c)
     Step.create(description: "Disposez la pâte dans un moule à tarte. Piquez-la avec une fourchette.", recipe: tarte_c)
@@ -89,22 +89,22 @@ puts 'Creating recipies...'
     chili.save!
 
     ing1_chili = Ingredient.create(name: "pois chiche")
-    Quantity.create(q: 1, mesure:"Conserve(s)", recipe: chili, ingredient:ing1_chili)
+    Quantity.create(q: "1", mesure:"Conserve(s)", recipe: chili, ingredient:ing1_chili)
 
     ing2_chili = Ingredient.create(name: "haricots rouges façon chili de Bonduelle")
-    Quantity.create(q: 1, mesure:"Conserve(s)", recipe: chili, ingredient:ing2_chili)
+    Quantity.create(q: "1", mesure:"Conserve(s)", recipe: chili, ingredient:ing2_chili)
 
     ing3_chili = Ingredient.create(name: "sauce tomate")
-    Quantity.create(q: 1, mesure:"Brique(s)", recipe: chili, ingredient:ing3_chili)
+    Quantity.create(q: "1", mesure:"Brique(s)", recipe: chili, ingredient:ing3_chili)
 
     ing4_chili = Ingredient.create(name: "mélange d'épices méxicaines")
-    Quantity.create(q: 1, mesure:"(rien)", recipe: chili, ingredient:ing4_chili)
+    Quantity.create(q: "1", mesure:"(rien)", recipe: chili, ingredient:ing4_chili)
 
     ing5_chili = Ingredient.create(name: "riz")
-    Quantity.create(q: 150, mesure:"g", recipe: chili, ingredient:ing5_chili)
+    Quantity.create(q: "150", mesure:"g", recipe: chili, ingredient:ing5_chili)
 
     ing6_chili = Ingredient.create(name: "fromage rapé (pour encore plus de plaisir)")
-    Quantity.create(q: 2, mesure:"Pincée(s)", recipe: chili, ingredient:ing6_chili)
+    Quantity.create(q: "2", mesure:"Pincée(s)", recipe: chili, ingredient:ing6_chili)
 
     Step.create(description: "Faites cuire le riz.", recipe: chili)
     Step.create(description: "Réutilisez la casserole du riz pour faire la sauce : faites revenir les haricots puis les pois chiches avec les épices.", recipe: chili)
@@ -118,22 +118,22 @@ puts 'Creating recipies...'
     quiche.save!
 
     ing1_quiche = Ingredient.create(name: "pâte brisée")
-    Quantity.create(q: 1, mesure:"(rien)", recipe: quiche, ingredient:ing1_quiche)
+    Quantity.create(q: "1", mesure:"(rien)", recipe: quiche, ingredient:ing1_quiche)
 
     ing2_quiche = Ingredient.create(name: "œufs")
-    Quantity.create(q: 3, mesure:"(rien)", recipe: quiche, ingredient:ing2_quiche)
+    Quantity.create(q: "3", mesure:"(rien)", recipe: quiche, ingredient:ing2_quiche)
 
     ing3_quiche = Ingredient.create(name: "crème liquide soja")
-    Quantity.create(q: 1, mesure:"Brique(s)", recipe: quiche, ingredient:ing3_quiche)
+    Quantity.create(q: "1", mesure:"Brique(s)", recipe: quiche, ingredient:ing3_quiche)
 
     ing4_quiche = Ingredient.create(name: "feta")
-    Quantity.create(q: 100, mesure:"g", recipe: quiche, ingredient:ing4_quiche)
+    Quantity.create(q: "100", mesure:"g", recipe: quiche, ingredient:ing4_quiche)
 
     ing5_quiche = Ingredient.create(name: "poireaux")
-    Quantity.create(q: 2, mesure:"(rien)", recipe: quiche, ingredient:ing5_quiche)
+    Quantity.create(q: "2", mesure:"(rien)", recipe: quiche, ingredient:ing5_quiche)
 
     ing6_quiche = Ingredient.create(name: "échalotte (optionnel)")
-    Quantity.create(q: 1, mesure:"(rien)", recipe: quiche, ingredient:ing6_quiche)
+    Quantity.create(q: "1", mesure:"(rien)", recipe: quiche, ingredient:ing6_quiche)
 
     Step.create(description: "Faites préchauffer le four à 200°C.", recipe: quiche)
     Step.create(description: "Faites revenir l'échalotte avec les poireaux, préalablement coupés et lavés of course.", recipe: quiche)
@@ -148,25 +148,25 @@ puts 'Creating recipies...'
     gratin_b.save!
 
     ing1_gratinb = Ingredient.create(name: "butternut")
-    Quantity.create(q: 1, mesure:"(rien)", recipe: gratin_b, ingredient:ing1_gratinb)
+    Quantity.create(q: "1", mesure:"(rien)", recipe: gratin_b, ingredient:ing1_gratinb)
 
     ing2_gratinb = Ingredient.create(name: "champignons")
-    Quantity.create(q: 400, mesure:"g", recipe: gratin_b, ingredient:ing2_gratinb)
+    Quantity.create(q: "400", mesure:"g", recipe: gratin_b, ingredient:ing2_gratinb)
 
     ing3_gratinb = Ingredient.create(name: "œufs")
-    Quantity.create(q: 3, mesure:"(rien)", recipe: gratin_b, ingredient:ing3_gratinb)
+    Quantity.create(q: "3", mesure:"(rien)", recipe: gratin_b, ingredient:ing3_gratinb)
 
     ing4_gratinb = Ingredient.create(name: "dés de jambon cuits")
-    Quantity.create(q: 200, mesure:"g", recipe: gratin_b, ingredient:ing4_gratinb)
+    Quantity.create(q: "200", mesure:"g", recipe: gratin_b, ingredient:ing4_gratinb)
 
     ing5_gratinb = Ingredient.create(name: "yaourt nature")
-    Quantity.create(q: 125, mesure:"g", recipe: gratin_b, ingredient:ing5_gratinb)
+    Quantity.create(q: "125", mesure:"g", recipe: gratin_b, ingredient:ing5_gratinb)
 
     ing6_gratinb = Ingredient.create(name: "gruyère rapé")
-    Quantity.create(q: 50, mesure:"g", recipe: gratin_b, ingredient:ing6_gratinb)
+    Quantity.create(q: "50", mesure:"g", recipe: gratin_b, ingredient:ing6_gratinb)
 
     ing7_gratinb = Ingredient.create(name: "ail en poudre")
-    Quantity.create(q: 1, mesure:"Pincée(s)", recipe: gratin_b, ingredient:ing7_gratinb)
+    Quantity.create(q: "1", mesure:"Pincée(s)", recipe: gratin_b, ingredient:ing7_gratinb)
 
     Step.create!(description: "Epluchez votre butternut, videz-le et coupez-le en petits morceaux. Faites-les cuire dans une poêle avec ½ verre d’eau pendant 10/15 minutes. Ils ne doivent pas être trop cuits mais fermes.", recipe: gratin_b)
     Step.create!(description:"Pendant ce temps épluchez les champignons, coupez-les et faites-les cuire dan 1 c à soupe d’huile.", recipe: gratin_b)
@@ -183,16 +183,16 @@ puts 'Creating recipies...'
     bric.save!
 
     ing1_bric = Ingredient.create(name: "feuilles de bric")
-    Quantity.create(q: 5, mesure:"(rien)", recipe: bric, ingredient:ing1_bric)
+    Quantity.create(q: "5", mesure:"(rien)", recipe: bric, ingredient:ing1_bric)
 
     ing2_bric = Ingredient.create(name: "épinards décongelés")
-    Quantity.create(q: 10, mesure:"C à soupe", recipe: bric, ingredient:ing2_bric)
+    Quantity.create(q: "10", mesure:"C à soupe", recipe: bric, ingredient:ing2_bric)
 
     ing3_bric = Ingredient.create(name: "bûche de chèvre")
-    Quantity.create(q: 100, mesure:"g", recipe: bric, ingredient:ing3_bric)
+    Quantity.create(q: "100", mesure:"g", recipe: bric, ingredient:ing3_bric)
 
     ing4_bric = Ingredient.create(name: "ail en poudre")
-    Quantity.create(q: 1, mesure:"Pincée(s)", recipe: bric, ingredient:ing4_bric)
+    Quantity.create(q: "1", mesure:"Pincée(s)", recipe: bric, ingredient:ing4_bric)
 
     Step.create(description:"Préchauffez le four à 200°C.", recipe: bric)
     Step.create(description:"Faites décongeler les épinards puis assaisonnez-les avec de l'huile, du sel, du poivre et de l'ail en poudre.", recipe: bric)
@@ -208,16 +208,16 @@ puts 'Creating recipies...'
     grating.save!
 
     ing1_grating = Ingredient.create(name: "gnocchis de pomme de terre")
-    Quantity.create(q: 300, mesure:"g", recipe: grating, ingredient:ing1_grating)
+    Quantity.create(q: "300", mesure:"g", recipe: grating, ingredient:ing1_grating)
 
     ing2_grating = Ingredient.create(name: "crème liquide")
-    Quantity.create(q: 10, mesure:"Cl", recipe: grating, ingredient:ing2_grating)
+    Quantity.create(q: "10", mesure:"Cl", recipe: grating, ingredient:ing2_grating)
 
     ing3_grating = Ingredient.create(name: "fromage rapé (mozza par ex)")
-    Quantity.create(q: 50, mesure:"g", recipe: grating, ingredient:ing3_grating)
+    Quantity.create(q: "50", mesure:"g", recipe: grating, ingredient:ing3_grating)
 
     ing4_grating = Ingredient.create(name: "dés de jambon")
-    Quantity.create(q: 75, mesure:"g", recipe: grating, ingredient:ing4_grating)
+    Quantity.create(q: "75", mesure:"g", recipe: grating, ingredient:ing4_grating)
 
     Step.create(description:"Préchauffez le four à 200°C.", recipe: grating)
     Step.create(description:"Faites cuire les gnocchis dans de l'eau bouillante salée. Une fois cuits, ils remontent à la surface.", recipe: grating)
@@ -232,25 +232,25 @@ puts 'Creating recipies...'
     cookies.save!
 
     ing1_cookies = Ingredient.create(name: "beurre mou")
-    Quantity.create(q: 75, mesure:"g", recipe: cookies, ingredient:ing1_cookies)
+    Quantity.create(q: "75", mesure:"g", recipe: cookies, ingredient:ing1_cookies)
 
     ing2_cookies = Ingredient.create(name: "sucre roux")
-    Quantity.create(q: 100, mesure:"g", recipe: cookies, ingredient:ing2_cookies)
+    Quantity.create(q: "100", mesure:"g", recipe: cookies, ingredient:ing2_cookies)
 
     ing3_cookies = Ingredient.create(name: "sucre vanillé")
-    Quantity.create(q: 2, mesure:"Sachet(s)", recipe: cookies, ingredient:ing3_cookies)
+    Quantity.create(q: "2", mesure:"Sachet(s)", recipe: cookies, ingredient:ing3_cookies)
 
     ing4_cookies = Ingredient.create(name: "œuf")
-    Quantity.create(q: 1, mesure:"(rien)", recipe: cookies, ingredient:ing4_cookies)
+    Quantity.create(q: "1", mesure:"(rien)", recipe: cookies, ingredient:ing4_cookies)
 
     ing5_cookies = Ingredient.create(name: "farine")
-    Quantity.create(q: 150, mesure:"g", recipe: cookies, ingredient:ing5_cookies)
+    Quantity.create(q: "150", mesure:"g", recipe: cookies, ingredient:ing5_cookies)
 
     ing6_cookies = Ingredient.create(name: "levure")
-    Quantity.create(q: 11, mesure:"g", recipe: cookies, ingredient:ing6_cookies)
+    Quantity.create(q: "11", mesure:"g", recipe: cookies, ingredient:ing6_cookies)
 
     ing7_cookies = Ingredient.create(name: "pépites de chocolat")
-    Quantity.create(q: 1, mesure:"Sachet(s)", recipe: cookies, ingredient:ing7_cookies)
+    Quantity.create(q: "1", mesure:"Sachet(s)", recipe: cookies, ingredient:ing7_cookies)
 
     Step.create(description:"Préchauffez le four à 180°C.", recipe: cookies)
     Step.create(description:"Mélangez le beurre mou, le sucre et le sucre vanillé.", recipe: cookies)
@@ -267,34 +267,34 @@ puts 'Creating recipies...'
     carrot.save!
 
     ing1_carrot = Ingredient.create(name: "carottes rapées")
-    Quantity.create(q: 300, mesure:"g", recipe: carrot, ingredient:ing1_carrot)
+    Quantity.create(q: "300", mesure:"g", recipe: carrot, ingredient:ing1_carrot)
 
     ing2_carrot = Ingredient.create(name: "beurre fondu")
-    Quantity.create(q: 150, mesure:"g", recipe: carrot, ingredient:ing2_carrot)
+    Quantity.create(q: "150", mesure:"g", recipe: carrot, ingredient:ing2_carrot)
 
     ing3_carrot = Ingredient.create(name: "sucre roux")
-    Quantity.create(q: 200, mesure:"g", recipe: carrot, ingredient:ing3_carrot)
+    Quantity.create(q: "200", mesure:"g", recipe: carrot, ingredient:ing3_carrot)
 
     ing4_carrot = Ingredient.create(name: "farine")
-    Quantity.create(q: 200, mesure:"g", recipe: carrot, ingredient:ing4_carrot)
+    Quantity.create(q: "200", mesure:"g", recipe: carrot, ingredient:ing4_carrot)
 
     ing5_carrot = Ingredient.create(name: "levure")
-    Quantity.create(q: 1, mesure:"Sachet(s)", recipe: carrot, ingredient:ing5_carrot)
+    Quantity.create(q: "1", mesure:"Sachet(s)", recipe: carrot, ingredient:ing5_carrot)
 
     ing6_carrot = Ingredient.create(name: "cannelle")
-    Quantity.create(q: 1, mesure:"C à café", recipe: carrot, ingredient:ing6_carrot)
+    Quantity.create(q: "1", mesure:"C à café", recipe: carrot, ingredient:ing6_carrot)
 
     ing7_carrot = Ingredient.create(name: "muscade")
-    Quantity.create(q: 1, mesure:"C à café", recipe: carrot, ingredient:ing7_carrot)
+    Quantity.create(q: "1", mesure:"C à café", recipe: carrot, ingredient:ing7_carrot)
 
     ing8_carrot = Ingredient.create(name: "raisins secs")
-    Quantity.create(q: 100, mesure:"g", recipe: carrot, ingredient:ing8_carrot)
+    Quantity.create(q: "100", mesure:"g", recipe: carrot, ingredient:ing8_carrot)
 
     ing9_carrot = Ingredient.create(name: "noix")
-    Quantity.create(q: 50, mesure:"g", recipe: carrot, ingredient:ing9_carrot)
+    Quantity.create(q: "50", mesure:"g", recipe: carrot, ingredient:ing9_carrot)
 
     ing6_carrot = Ingredient.create(name: "lait")
-    Quantity.create(q: 3, mesure:"C à soupe", recipe: carrot, ingredient:ing6_carrot)
+    Quantity.create(q: "3", mesure:"C à soupe", recipe: carrot, ingredient:ing6_carrot)
 
     Step.create(description:"Préchauffez le four à 170°C.", recipe: carrot)
     Step.create(description:"Mélangez le beurre et le sucre. Puis les œufs.", recipe: carrot)
@@ -309,22 +309,22 @@ puts 'Creating recipies...'
     pancakes.save!
 
     ing1_pancakes = Ingredient.create(name: "œuf")
-    Quantity.create(q: 1, mesure:"(rien)", recipe: pancakes, ingredient:ing1_pancakes)
+    Quantity.create(q: "1", mesure:"(rien)", recipe: pancakes, ingredient:ing1_pancakes)
 
     ing2_pancakes = Ingredient.create(name: "sucre")
-    Quantity.create(q: 1, mesure:"C à soupe", recipe: pancakes, ingredient:ing2_pancakes)
+    Quantity.create(q: "1", mesure:"C à soupe", recipe: pancakes, ingredient:ing2_pancakes)
 
     ing3_pancakes = Ingredient.create(name: "huile")
-    Quantity.create(q: 1, mesure:"C à soupe", recipe: pancakes, ingredient:ing3_pancakes)
+    Quantity.create(q: "1", mesure:"C à soupe", recipe: pancakes, ingredient:ing3_pancakes)
 
     ing4_pancakes = Ingredient.create(name: "farine")
-    Quantity.create(q: 150, mesure:"g", recipe: pancakes, ingredient:ing4_pancakes)
+    Quantity.create(q: "150", mesure:"g", recipe: pancakes, ingredient:ing4_pancakes)
 
     ing5_pancakes = Ingredient.create(name: "levure")
-    Quantity.create(q: 1, mesure:"C à café", recipe: pancakes, ingredient:ing5_pancakes)
+    Quantity.create(q: "1", mesure:"C à café", recipe: pancakes, ingredient:ing5_pancakes)
 
     ing6_pancakes = Ingredient.create(name: "lait")
-    Quantity.create(q: 200, mesure:"Ml", recipe: pancakes, ingredient:ing6_pancakes)
+    Quantity.create(q: "200", mesure:"Ml", recipe: pancakes, ingredient:ing6_pancakes)
 
     Step.create(description:"Battre l'œuf avec le sucre.", recipe: pancakes)
     Step.create(description:"Rajoutez l'huile.", recipe: pancakes)
@@ -340,28 +340,28 @@ puts 'Creating recipies...'
     cake_sale.save!
 
     ing1_cake = Ingredient.create(name: "farine")
-    Quantity.create(q: 150, mesure:"g", recipe: cake_sale, ingredient:ing1_cake)
+    Quantity.create(q: "150", mesure:"g", recipe: cake_sale, ingredient:ing1_cake)
 
     ing2_cake = Ingredient.create(name: "jambon")
-    Quantity.create(q: 200, mesure:"g", recipe: cake_sale, ingredient:ing2_cake)
+    Quantity.create(q: "200", mesure:"g", recipe: cake_sale, ingredient:ing2_cake)
 
     ing3_cake = Ingredient.create(name: "olives vertes dénoyotées")
-    Quantity.create(q: 150, mesure:"g", recipe: cake_sale, ingredient:ing3_cake)
+    Quantity.create(q: "150", mesure:"g", recipe: cake_sale, ingredient:ing3_cake)
 
     ing4_cake = Ingredient.create(name: "fromage rapé")
-    Quantity.create(q: 100, mesure:"g", recipe: cake_sale, ingredient:ing4_cake)
+    Quantity.create(q: "100", mesure:"g", recipe: cake_sale, ingredient:ing4_cake)
 
     ing5_cake = Ingredient.create(name: "œufs")
-    Quantity.create(q: 4, mesure:"(rien)", recipe: cake_sale, ingredient:ing5_cake)
+    Quantity.create(q: "4", mesure:"(rien)", recipe: cake_sale, ingredient:ing5_cake)
 
     ing6_cake = Ingredient.create(name: "lait")
-    Quantity.create(q: 10, mesure:"Cl", recipe: cake_sale, ingredient:ing6_cake)
+    Quantity.create(q: "10", mesure:"Cl", recipe: cake_sale, ingredient:ing6_cake)
 
     ing7_cake = Ingredient.create(name: "levure")
-    Quantity.create(q: 1, mesure:"Sachet(s)", recipe: cake_sale, ingredient:ing7_cake)
+    Quantity.create(q: "1", mesure:"Sachet(s)", recipe: cake_sale, ingredient:ing7_cake)
 
     ing8_cake = Ingredient.create(name: "huile")
-    Quantity.create(q: 1, mesure:"C à soupe", recipe: cake_sale, ingredient:ing8_cake)
+    Quantity.create(q: "1", mesure:"C à soupe", recipe: cake_sale, ingredient:ing8_cake)
 
     Step.create(description:"Préchauffez le four à 180°C.", recipe: cake_sale)
     Step.create(description:"Versez les œufs dans un puit de farine et mélangez progressivement.", recipe: cake_sale)
@@ -376,22 +376,22 @@ puts 'Creating recipies...'
     chocolate_cake.save!
 
     ing1_choco = Ingredient.create(name: "œufs")
-    Quantity.create(q: 4, mesure:"(rien)", recipe: chocolate_cake, ingredient:ing1_choco)
+    Quantity.create(q: "4", mesure:"(rien)", recipe: chocolate_cake, ingredient:ing1_choco)
 
     ing2_choco = Ingredient.create(name: "sucre")
-    Quantity.create(q: 170, mesure:"g", recipe: chocolate_cake, ingredient:ing2_choco)
+    Quantity.create(q: "170", mesure:"g", recipe: chocolate_cake, ingredient:ing2_choco)
 
     ing6_choco = Ingredient.create(name: "chocolat fondu")
-    Quantity.create(q: 200, mesure:"g", recipe: chocolate_cake, ingredient:ing6_choco)
+    Quantity.create(q: "200", mesure:"g", recipe: chocolate_cake, ingredient:ing6_choco)
 
     ing3_choco = Ingredient.create(name: "beurre fondu")
-    Quantity.create(q: 125, mesure:"g", recipe: chocolate_cake, ingredient:ing3_choco)
+    Quantity.create(q: "125", mesure:"g", recipe: chocolate_cake, ingredient:ing3_choco)
 
     ing4_choco = Ingredient.create(name: "farine")
-    Quantity.create(q: 100, mesure:"g", recipe: chocolate_cake, ingredient:ing4_choco)
+    Quantity.create(q: "100", mesure:"g", recipe: chocolate_cake, ingredient:ing4_choco)
 
     ing5_choco = Ingredient.create(name: "levure")
-    Quantity.create(q: 1, mesure:"Sachet(s)", recipe: chocolate_cake, ingredient:ing5_choco)
+    Quantity.create(q: "1", mesure:"Sachet(s)", recipe: chocolate_cake, ingredient:ing5_choco)
 
     Step.create(description:"Préchauffez le four à 180°C.", recipe: chocolate_cake)
     Step.create(description:"Mélangez les œufs et le sucre.", recipe: chocolate_cake)
@@ -406,22 +406,22 @@ puts 'Creating recipies...'
     croziflette.save!
 
     ing1_crozi = Ingredient.create(name: "crozets nature")
-    Quantity.create(q: 400, mesure:"g", recipe: croziflette, ingredient:ing1_crozi)
+    Quantity.create(q: "400", mesure:"g", recipe: croziflette, ingredient:ing1_crozi)
 
     ing2_crozi = Ingredient.create(name: "crozets sarrasin")
-    Quantity.create(q: 200, mesure:"g", recipe: croziflette, ingredient:ing2_crozi)
+    Quantity.create(q: "200", mesure:"g", recipe: croziflette, ingredient:ing2_crozi)
 
     ing3_crozi = Ingredient.create(name: "lardons")
-    Quantity.create(q: 500, mesure:"g", recipe: croziflette, ingredient:ing3_crozi)
+    Quantity.create(q: "500", mesure:"g", recipe: croziflette, ingredient:ing3_crozi)
 
     ing4_crozi = Ingredient.create(name: "reblochon")
-    Quantity.create(q: 700, mesure:"g", recipe: croziflette, ingredient:ing4_crozi)
+    Quantity.create(q: "700", mesure:"g", recipe: croziflette, ingredient:ing4_crozi)
 
     ing5_crozi = Ingredient.create(name: "crème fraîche")
-    Quantity.create(q: 1, mesure:"L", recipe: croziflette, ingredient:ing5_crozi)
+    Quantity.create(q: "1", mesure:"L", recipe: croziflette, ingredient:ing5_crozi)
 
     ing6_crozi = Ingredient.create(name: "oignons")
-    Quantity.create(q: 2, mesure:"(rien)", recipe: croziflette, ingredient:ing6_crozi)
+    Quantity.create(q: "2", mesure:"(rien)", recipe: croziflette, ingredient:ing6_crozi)
 
     Step.create(description:"Préchauffez le four à 180°C.", recipe: croziflette)
     Step.create(description:"Cuire les Crozets 15 min à l’eau bouillante salée (10 fois le volume de Crozets).", recipe: croziflette)
@@ -438,28 +438,28 @@ puts 'Creating recipies...'
     risotto.save!
 
     ing1_riso = Ingredient.create(name: "riz à risotto")
-    Quantity.create(q: 125, mesure:"g", recipe: risotto, ingredient:ing1_riso)
+    Quantity.create(q: "125", mesure:"g", recipe: risotto, ingredient:ing1_riso)
 
     ing2_riso = Ingredient.create(name: "champignons de Paris")
-    Quantity.create(q: 150, mesure:"g", recipe: risotto, ingredient:ing2_riso)
+    Quantity.create(q: "150", mesure:"g", recipe: risotto, ingredient:ing2_riso)
 
     ing3_riso = Ingredient.create(name: "poireaux")
-    Quantity.create(q: 1, mesure:"(rien)", recipe: risotto, ingredient:ing3_riso)
+    Quantity.create(q: "1", mesure:"(rien)", recipe: risotto, ingredient:ing3_riso)
 
     ing4_riso = Ingredient.create(name: "cube bouillon de légumes")
-    Quantity.create(q: 1, mesure:"(rien)", recipe: risotto, ingredient:ing4_riso)
+    Quantity.create(q: "1", mesure:"(rien)", recipe: risotto, ingredient:ing4_riso)
 
     ing5_riso = Ingredient.create(name: "oignon")
-    Quantity.create(q: 0.5, mesure:"(rien)", recipe: risotto, ingredient:ing5_riso)
+    Quantity.create(q: "0.5", mesure:"(rien)", recipe: risotto, ingredient:ing5_riso)
 
     ing6_riso = Ingredient.create(name: "vin blanc")
-    Quantity.create(q: 5, mesure:"Cl", recipe: risotto, ingredient:ing6_riso)
+    Quantity.create(q: "5", mesure:"Cl", recipe: risotto, ingredient:ing6_riso)
 
     ing7_riso = Ingredient.create(name: "crème fraîche")
-    Quantity.create(q: 7.5, mesure:"Cl", recipe: risotto, ingredient:ing7_riso)
+    Quantity.create(q: "7.5", mesure:"Cl", recipe: risotto, ingredient:ing7_riso)
 
     ing8_riso = Ingredient.create(name: "parmesan")
-    Quantity.create(q: 50, mesure:"g", recipe: risotto, ingredient:ing8_riso)
+    Quantity.create(q: "50", mesure:"g", recipe: risotto, ingredient:ing8_riso)
 
     Step.create(description:"Faites cuire les poireaux, coupés en rondelles. Ajoutez les champignons, coupés en morceaux, avec une cuillière à soupe de vin blanc. Ajoutez la crème frâiche, une fois le tout cuits. Réservez.", recipe: risotto)
     Step.create(description:"Faites bouillir un demi litre d'eau dans lequel vous diluerez le cube de bouillon.", recipe: risotto)
@@ -475,28 +475,28 @@ puts 'Creating recipies...'
     madeleines.save!
 
     ing1_mad = Ingredient.create(name: "œufs")
-    Quantity.create(q: 2, mesure:"(rien)", recipe: madeleines, ingredient:ing1_mad)
+    Quantity.create(q: "2", mesure:"(rien)", recipe: madeleines, ingredient:ing1_mad)
 
     ing2_mad = Ingredient.create(name: "miel")
-    Quantity.create(q: 10, mesure:"g", recipe: madeleines, ingredient:ing2_mad)
+    Quantity.create(q: "10", mesure:"g", recipe: madeleines, ingredient:ing2_mad)
 
     ing3_mad = Ingredient.create(name: "farine")
-    Quantity.create(q: 90, mesure:"g", recipe: madeleines, ingredient:ing3_mad)
+    Quantity.create(q: "90", mesure:"g", recipe: madeleines, ingredient:ing3_mad)
 
     ing4_mad = Ingredient.create(name: "cassonade")
-    Quantity.create(q: 10, mesure:"g", recipe: madeleines, ingredient:ing4_mad)
+    Quantity.create(q: "10", mesure:"g", recipe: madeleines, ingredient:ing4_mad)
 
     ing5_mad = Ingredient.create(name: "beurre fondu")
-    Quantity.create(q: 90, mesure:"g", recipe: madeleines, ingredient:ing5_mad)
+    Quantity.create(q: "90", mesure:"g", recipe: madeleines, ingredient:ing5_mad)
 
     ing6_mad = Ingredient.create(name: "sucre")
-    Quantity.create(q: 75, mesure:"g", recipe: madeleines, ingredient:ing6_mad)
+    Quantity.create(q: "75", mesure:"g", recipe: madeleines, ingredient:ing6_mad)
 
     ing7_mad = Ingredient.create(name: "levure")
-    Quantity.create(q: 0.5, mesure:"C à café", recipe: madeleines, ingredient:ing7_mad)
+    Quantity.create(q: "0.5", mesure:"C à café", recipe: madeleines, ingredient:ing7_mad)
 
     ing8_mad = Ingredient.create(name: "sel")
-    Quantity.create(q: 1, mesure:"Pincée(s)", recipe: madeleines, ingredient:ing8_mad)
+    Quantity.create(q: "1", mesure:"Pincée(s)", recipe: madeleines, ingredient:ing8_mad)
 
     Step.create(description:"Mélangez ensemble le sucre, la cassonade, le sel, les œufs entiers dans une jatte (j'utilise les mots de le recette d'origine.", recipe: madeleines)
     Step.create(description:"Puis ajoutez, la farine, le beurre fondu et refroidi, le miel et la levure.", recipe: madeleines)
