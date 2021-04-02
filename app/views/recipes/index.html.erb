@@ -3,8 +3,8 @@
 <!-- Search bar -->
   <div class="text-center mb-3">
     <%= form_tag recipes_path, method: :get do %>
-      <%= text_field_tag :query, params[:query], class: "w-56 rounded-full px-4 py-2 text-xs italic md:w-80", placeholder: "Cherchez une recette..." %>
-      <%= button_tag type: 'submit', class: "ml-2 rounded-full bg-new-black text-lila-deep h-8 w-8 text-center" do %>
+      <%= text_field_tag :query, params[:query], class: "w-56 rounded-full px-4 py-2 text-xs italic shadow md:w-80", placeholder: "Cherchez une recette..." %>
+      <%= button_tag type: 'submit', class: "ml-2 rounded-full bg-new-black text-lila-deep h-8 w-8 text-center shadow" do %>
         <i class="fas fa-search"></i>
       <% end %>
     <% end %>
@@ -13,10 +13,13 @@
 
 <!-- Category buttons -->
   <div class="text-center mb-4 md:mb-8 md:mt-4">
-    <%= link_to 'EZPZ', recipes_path(category: 'EZPZ'), class:"px-2 py-1 rounded-full text-xxs border-solid border border-new-black mr-1" %>
-    <%= link_to 'Classique', recipes_path(category: 'Classique'), class:"px-2 py-1 rounded-full text-xxs border-solid border border-new-black mr-1" %>
-    <%= link_to 'Master chef', recipes_path(category: 'Master chef'), class:"px-2 py-1 rounded-full text-xxs border-solid border border-new-black mr-1" %>
-    <%= link_to 'Dessert', recipes_path(category: 'Dessert'), class:"px-2 py-1 rounded-full text-xxs border-solid border border-new-black" %>
+    <%= link_to 'EZPZ', recipes_path(category: 'EZPZ'), class:"category-btn mr-1 #{"bg-new-black text-lila-deep" if params[:category] == "EZPZ"}" %>
+    <%= link_to 'Classique', recipes_path(category: 'Classique'), class:"category-btn mr-1 #{"bg-new-black text-lila-deep" if params[:category] == "Classique"}" %>
+    <%= link_to 'Master chef', recipes_path(category: 'Master chef'), class:"category-btn mr-1 #{"bg-new-black text-lila-deep" if params[:category] == "Master chef"}" %>
+    <%= link_to 'Dessert', recipes_path(category: 'Dessert'), class:"category-btn mr-1 #{"bg-new-black text-lila-deep" if params[:category] == "Dessert"}" %>
+    <%= link_to recipes_path, class:"category-btn" do %>
+      <i class="fas fa-times"></i>
+    <% end %>
   </div>
 <!-- Cards recipies -->
   <div class="h-86 overflow-scroll md:h-110 md:mb-5">
