@@ -275,6 +275,9 @@ puts 'Creating recipies...'
     ing3_carrot = Ingredient.create(name: "sucre roux")
     Quantity.create(q: "200", mesure:"g", recipe: carrot, ingredient:ing3_carrot)
 
+    ing7_carrot = Ingredient.create(name: "œufs")
+    Quantity.create(q: "2", mesure:"(rien)", recipe: carrot, ingredient:ing7_carrot)
+
     ing4_carrot = Ingredient.create(name: "farine")
     Quantity.create(q: "200", mesure:"g", recipe: carrot, ingredient:ing4_carrot)
 
